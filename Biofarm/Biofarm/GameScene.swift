@@ -37,6 +37,7 @@ class GameScene: SKScene {
             
             self.addChild(sprite)
         }
+        //Bye
     }
    
     override func update(currentTime: CFTimeInterval) {
