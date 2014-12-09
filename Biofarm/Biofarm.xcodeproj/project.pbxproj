@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D56A1E61A3795510094388C /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1D56A1E51A3795510094388C /* gitignore */; };
 		1D6FC35A1A322D8A00AAB1CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6FC3591A322D8A00AAB1CC /* AppDelegate.swift */; };
 		1D6FC35C1A322D8A00AAB1CC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1D6FC35B1A322D8A00AAB1CC /* GameScene.sks */; };
 		1D6FC35E1A322D8A00AAB1CC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6FC35D1A322D8A00AAB1CC /* GameScene.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D56A1E51A3795510094388C /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		1D6FC3541A322D8A00AAB1CC /* Biofarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biofarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6FC3581A322D8A00AAB1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D6FC3591A322D8A00AAB1CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		1D6FC34B1A322D8A00AAB1CC = {
 			isa = PBXGroup;
 			children = (
+				1D56A1E51A3795510094388C /* gitignore */,
 				1D6FC3561A322D8A00AAB1CC /* Biofarm */,
 				1D6FC3701A322D8A00AAB1CC /* BiofarmTests */,
 				1D6FC3551A322D8A00AAB1CC /* Products */,
@@ -202,6 +205,7 @@
 				1D6FC3651A322D8A00AAB1CC /* Images.xcassets in Resources */,
 				1D6FC35C1A322D8A00AAB1CC /* GameScene.sks in Resources */,
 				1D6FC3631A322D8A00AAB1CC /* Main.storyboard in Resources */,
+				1D56A1E61A3795510094388C /* gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +419,7 @@
 				1D6FC3791A322D8A00AAB1CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D6FC37A1A322D8A00AAB1CC /* Build configuration list for PBXNativeTarget "BiofarmTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				1D6FC37C1A322D8A00AAB1CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
