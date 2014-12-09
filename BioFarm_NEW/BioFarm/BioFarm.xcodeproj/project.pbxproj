@@ -406,6 +406,7 @@
 				1DC5BB701A37AA4500F8DA6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DC5BB711A37AA4500F8DA6F /* Build configuration list for PBXNativeTarget "BioFarmTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +415,7 @@
 				1DC5BB731A37AA4500F8DA6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
