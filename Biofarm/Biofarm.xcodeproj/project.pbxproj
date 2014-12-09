@@ -34,7 +34,7 @@
 		1D56A1E51A3795510094388C /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		1D6FC3541A322D8A00AAB1CC /* Biofarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biofarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6FC3581A322D8A00AAB1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D6FC3591A322D8A00AAB1CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Biofarm/AppDelegate.swift; sourceTree = "<group>"; };
+		1D6FC3591A322D8A00AAB1CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6FC35B1A322D8A00AAB1CC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		1D6FC35D1A322D8A00AAB1CC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		1D6FC35F1A322D8A00AAB1CC /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				1D56A1E51A3795510094388C /* gitignore */,
-				1D6FC3591A322D8A00AAB1CC /* AppDelegate.swift */,
 				1D6FC3561A322D8A00AAB1CC /* Biofarm */,
 				1D6FC3701A322D8A00AAB1CC /* BiofarmTests */,
 				1D6FC3551A322D8A00AAB1CC /* Products */,
@@ -89,6 +88,7 @@
 		1D6FC3561A322D8A00AAB1CC /* Biofarm */ = {
 			isa = PBXGroup;
 			children = (
+				1D6FC3591A322D8A00AAB1CC /* AppDelegate.swift */,
 				1D6FC35B1A322D8A00AAB1CC /* GameScene.sks */,
 				1D6FC35D1A322D8A00AAB1CC /* GameScene.swift */,
 				1D6FC35F1A322D8A00AAB1CC /* GameViewController.swift */,
