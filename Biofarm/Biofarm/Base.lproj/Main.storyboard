@@ -23,13 +23,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPw-0l-MRH">
-                                <rect key="frame" x="149" y="176" width="223" height="47"/>
+                                <rect key="frame" x="353" y="122" width="223" height="47"/>
                                 <color key="backgroundColor" red="0.1576402388" green="0.6741677989" blue="0.3877363325" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Test Button">
                                     <color key="titleColor" red="0.035294119268655777" green="0.043137256056070328" blue="0.94509810209274292" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTest:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Oxx-Kt-bqf"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="tT4-fH-JEn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.094117656350135803" green="0.56862747669219971" blue="0.14509804546833038" alpha="1" colorSpace="deviceRGB"/>
