@@ -66,8 +66,9 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    
-    @IBAction func buttonTest(sender: UIButton) {
+    @IBAction func ButtonPush(sender: AnyObject) {
+        println("hello")
         
     }
+    
 }
