@@ -17,24 +17,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="C6 BioFarm: The Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wem-bR-pFF">
-                                <rect key="frame" x="149" y="58" width="223" height="42"/>
+                                <rect key="frame" x="149" y="61" width="223" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPw-0l-MRH">
-                                <rect key="frame" x="149" y="176" width="223" height="47"/>
+                                <rect key="frame" x="149" y="168" width="223" height="47"/>
                                 <color key="backgroundColor" red="0.1576402388" green="0.6741677989" blue="0.3877363325" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Test Button">
                                     <color key="titleColor" red="0.035294119268655777" green="0.043137256056070328" blue="0.94509810209274292" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ButtonTest:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ZYT-WP-6yW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.094117656350135803" green="0.56862747669219971" blue="0.14509804546833038" alpha="1" colorSpace="deviceRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="Test" destination="3se-qz-xqx" id="lYB-GL-rmD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
