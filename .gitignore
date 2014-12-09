@@ -19,3 +19,7 @@ DerivedData
 
 Biofarm/Biofarm.xcodeproj/project.xcworkspace/xcuserdata/tagger94.xcuserdatad/UserInterfaceState.xcuserstate
 
+
+Biofarm/Biofarm/Base.lproj/Main.storyboard
+
+Biofarm/Biofarm/GameViewController.swift
