@@ -22,51 +22,36 @@ class event{
         switch(rand){
         case 600:
             return 1
-            break
         case 760:
-            return .6
-            break
+            return 0.6
         case 868:
-            return .7
-            break
+            return 0.7
         case 884:
             return 0
-            break
         case 896:
             return 0.6
-            break
         case 944:
             return 0.5
-            break
         case 952:
             return 0.6
-            break
         case 960:
             return 960
-            break
         case 972:
             return 0.7
-            break
         case 975:
             return 0.7
-            break
         case 980:
             return 0.8
-            break
         case 985:
             return 0.9
-            break
         case 990:
             return 0.4
-            break
         case 995:
             return 0.0
-            break
         case 1000:
             return 0
-            break
         default:
-            break
+            return 10.0
             
         }
     }
