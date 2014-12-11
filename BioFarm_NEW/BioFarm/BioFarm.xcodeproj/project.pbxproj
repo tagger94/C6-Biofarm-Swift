@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0246231A3A391A009A37EE /* Land.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0246221A3A391A009A37EE /* Land.swift */; };
+		1D0246251A3A3DF0009A37EE /* Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0246241A3A3DF0009A37EE /* Crop.swift */; };
+		1D0246271A3A458A009A37EE /* Farm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0246261A3A458A009A37EE /* Farm.swift */; };
 		1DC5BB551A37AA4400F8DA6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5BB541A37AA4400F8DA6F /* AppDelegate.swift */; };
 		1DC5BB571A37AA4400F8DA6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5BB561A37AA4400F8DA6F /* ViewController.swift */; };
 		1DC5BB5A1A37AA4400F8DA6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC5BB581A37AA4400F8DA6F /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D0246221A3A391A009A37EE /* Land.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Land.swift; sourceTree = "<group>"; };
+		1D0246241A3A3DF0009A37EE /* Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
+		1D0246261A3A458A009A37EE /* Farm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Farm.swift; sourceTree = "<group>"; };
 		1DC5BB4F1A37AA4400F8DA6F /* BioFarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioFarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC5BB531A37AA4400F8DA6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DC5BB541A37AA4400F8DA6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 				1DC5BB5B1A37AA4400F8DA6F /* Images.xcassets */,
 				1DC5BB5D1A37AA4400F8DA6F /* LaunchScreen.xib */,
 				1DC5BB521A37AA4400F8DA6F /* Supporting Files */,
+				1D0246221A3A391A009A37EE /* Land.swift */,
+				1D0246241A3A3DF0009A37EE /* Crop.swift */,
+				1D0246261A3A458A009A37EE /* Farm.swift */,
 			);
 			path = BioFarm;
 			sourceTree = "<group>";
@@ -212,7 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DC5BB571A37AA4400F8DA6F /* ViewController.swift in Sources */,
+				1D0246271A3A458A009A37EE /* Farm.swift in Sources */,
+				1D0246251A3A3DF0009A37EE /* Crop.swift in Sources */,
 				1DC5BB551A37AA4400F8DA6F /* AppDelegate.swift in Sources */,
+				1D0246231A3A391A009A37EE /* Land.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
