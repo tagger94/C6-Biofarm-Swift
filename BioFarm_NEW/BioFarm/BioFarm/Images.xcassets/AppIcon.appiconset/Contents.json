@@ -1,9 +1,8 @@
 {
   "images" : [
     {
-      "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "icon_app.png",
+      "size" : "29x29",
       "scale" : "1x"
     },
     {
@@ -12,9 +11,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "icon_app-1.png",
+      "size" : "40x40",
       "scale" : "1x"
     },
     {
@@ -23,9 +21,8 @@
       "scale" : "2x"
     },
     {
+      "idiom" : "ipad",
       "size" : "76x76",
-      "idiom" : "ipad",
-      "filename" : "icon_app-2.png",
       "scale" : "1x"
     },
     {
