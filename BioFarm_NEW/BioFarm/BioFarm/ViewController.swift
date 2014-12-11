@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var lbl0: UILabel!
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func helloWorld(sender: UIButton) {
+    @IBAction func play(sender: UIButton) {
         
-        println("Hello World!");
-        label.text = "Hello World"
+        //open new gameplay view
+        lbl0.text = "Play";
         
     }
-
+    
+    @IBAction func options(sender: UIButton) {
+        
+        //open new options view
+        lbl0.text = "Options";
+        
+    }
+    
 }
 
