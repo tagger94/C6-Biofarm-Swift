@@ -24,6 +24,8 @@ class Crop  {
         insured = insuredGiven
     }
     
-    
+    func getInsurence(){
+        return insured
+    }
     
 }
