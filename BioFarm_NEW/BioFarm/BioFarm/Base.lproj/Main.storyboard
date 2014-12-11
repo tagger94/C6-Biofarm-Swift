@@ -17,29 +17,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lad-fA-9ix">
-                                <rect key="frame" x="246" y="119" width="128" height="71"/>
-                                <state key="normal" title="Hello world">
+                                <rect key="frame" x="229" y="243" width="63" height="33"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="helloWorld:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUD-GL-aix"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jep-mb-lGR">
-                                <rect key="frame" x="279" y="227" width="150" height="47"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="C6 BioFarm: The Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jep-mb-lGR">
+                                <rect key="frame" x="137" y="188" width="326" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.99215692281723022" green="0.35294118523597717" blue="0.0078431377187371254" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="barn" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-aX-827">
+                                <rect key="frame" x="215" y="28" width="170" height="105"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-se-rhE">
+                                <rect key="frame" x="233" y="284" width="55" height="30"/>
+                                <state key="normal" title="Options">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="options:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SFY-S5-haI"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="ue5-Lx-aDs">
+                                <rect key="frame" x="6" y="413" width="85" height="176"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDW-5k-dSP">
+                                <rect key="frame" x="193" y="322" width="134" height="82"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99215692280000001" green="0.35294118520000001" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-bF-Cqn">
+                                <rect key="frame" x="495" y="423" width="85" height="170"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.094117656350135803" green="0.61568629741668701" blue="0.14901961386203766" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="Jep-mb-lGR" id="Mdf-le-s1V"/>
+                        <outlet property="lbl0" destination="YDW-5k-dSP" id="RKo-ye-8FP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="barn" width="170" height="105"/>
+        <image name="switchgrass" width="85" height="170"/>
+    </resources>
 </document>
