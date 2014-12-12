@@ -69,7 +69,9 @@ class Crop  {
         insured = insuredGiven
     }
     
-    
+    func getInsurence(){
+        return insured
+    }
     
     /*
     * Getters and Setters
