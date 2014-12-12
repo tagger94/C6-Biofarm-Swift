@@ -69,7 +69,7 @@ class Crop  {
         insured = insuredGiven
     }
     
-    func getInsurence(){
+    func getInsurence() -> Bool{
         return insured
     }
     

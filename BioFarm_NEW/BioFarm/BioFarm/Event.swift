@@ -10,7 +10,7 @@ import Foundation
 
 //add annimations
 
-class event{
+class Event{
     
     var rand: Int
     
