@@ -14,9 +14,54 @@ enum CropType {
     case Soy
 }
 
+struct CropInfo {
+
+    struct corn {
+        enum money : Int {
+            case insured = 800
+            case uninsured = 600
+            case profit = 900
+        }
+        
+        enum sprites : String {
+            case sprite_1 = "corn"
+        }
+        
+    }
+    
+    struct soy {
+        enum money : Int {
+            case insured = 600
+            case uninsured = 450
+            case profit = 750
+        }
+        
+        enum sprites : String {
+            case sprite_1 = "soybean"
+        }
+        
+    }
+    
+    struct grass {
+        enum money : Int {
+            case uninsured = 150
+            case profit = 300
+        }
+        
+        enum sprites : String {
+            case sprite_1 = "switchgrass"
+        }
+        
+    }
+    
+    
+    
+    
+}
+
 class Crop  {
-    var type = CropType.Corn
-    var insured : Bool
+    private var type = CropType.Corn
+    private var insured : Bool
     
     
     init (typeGiven : CropType, insuredGiven : Bool) {
@@ -24,8 +69,17 @@ class Crop  {
         insured = insuredGiven
     }
     
-    func getInsurence(){
+    /*
+    * Getters and Setters
+    */
+    func getCrop() -> CropType {
+        return self.type
+    }
+    
+    func isInsured() -> Bool {
         return insured
     }
+    
+    
     
 }
