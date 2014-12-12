@@ -22,8 +22,8 @@ class Land {
         self.size = size
     }
     
-    func plant (toPlant : CropType, isInsured : Bool) {
-        self.crop = Crop(typeGiven: toPlant, insuredGiven: isInsured)
+    func plant (toPlant : Crop){
+        crop = toPlant
     }
     
     func harvest () -> Int {
