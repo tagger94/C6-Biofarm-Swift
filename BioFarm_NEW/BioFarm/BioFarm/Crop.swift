@@ -69,13 +69,6 @@ class Crop  {
         insured = insuredGiven
     }
     
-<<<<<<< HEAD
-=======
-    func getInsurence() -> Bool{
-        return insured
-    }
-    
->>>>>>> Jackson-
     /*
     * Getters and Setters
     */
