@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Farm {
+public class Farm {
     
     var farmLand : [String:Land]
     var cash : Money
     
-    init(){
+    public init(){
         farmLand = ["F1": Land(size: 100), "F2": Land(size: 200), "F3": Land(size: 300), "F4": Land(size: 400)]
         cash = Money()
     }
