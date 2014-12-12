@@ -10,32 +10,34 @@ import Foundation
 
 class Farm {
     
-    var farmLand: [String:Land]
-    var cash
+    var farmLand : [String:Land]
+    var cash : Money
     
     init(){
-        farmland = ["F1": var L1 = Land(), "F2": var L2 = Land(), "F3": var L3 = Land(), "F4": var L4 = Land()]
-        cash = money()
+        farmLand = ["F1": Land(size: 100), "F2": Land(size: 200), "F3": Land(size: 300), "F4": Land(size: 400)]
+        cash = Money()
     }
     
-    private func totalProfit(){
-        var sum
+    private func totalProfit() -> Double{
+        var sum : Int = 0
         var e = Event()
-        var modifier: Double = e.doEvent
+        
+        var modifier: Double = e.doEvent()
         for (farm, land) in farmLand{
-            sum += land.harvest
+            sum += land.harvest()
         }
-        var profit = sum * modifier
+        
+        
+        var profit = Double (sum) * modifier
         return profit
     }
     
     func changeMoney(amount : Double){
-        cash.addCash(amount)
+        cash.add(amount)
     }
     
-    func plantCrops(farm : String, cropType : Crop){
-        l = farmland[farm]
-        l.plant(cropType)
+    func plantCrops(farm : String, cropToPlant : Crop){
+        farmLand[farm]?.plant(cropToPlant)
         //plants crop animation
     }
     
