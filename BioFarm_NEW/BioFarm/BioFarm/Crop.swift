@@ -15,32 +15,46 @@ enum CropType {
 }
 
 struct CropInfo {
-//    struct Corn {
-//        struct price {
-//            var insured = 800
-//            var uninsured = 600
-//        }
-//        
-//        var profit : Int = 900
-//        
-//        let sprite = "soybean"
-//    }
-    
-    struct soy {
-       
-        
-        let profit = 750
-        
-        let sprite = "soybean"
-        
-        enum price : Int {
-            case insured = 600
-            case uninsured = 450
+
+    struct corn {
+        enum money : Int {
+            case insured = 800
+            case uninsured = 600
+            case profit = 900
         }
+        
+        enum sprites : String {
+            case sprite_1 = "corn"
+        }
+        
     }
     
-//    let corn : Corn
-    let Soy : soy
+    struct soy {
+        enum money : Int {
+            case insured = 600
+            case uninsured = 450
+            case profit = 750
+        }
+        
+        enum sprites : String {
+            case sprite_1 = "soybean"
+        }
+        
+    }
+    
+    struct grass {
+        enum money : Int {
+            case uninsured = 150
+            case profit = 300
+        }
+        
+        enum sprites : String {
+            case sprite_1 = "switchgrass"
+        }
+        
+    }
+    
+    
     
     
 }

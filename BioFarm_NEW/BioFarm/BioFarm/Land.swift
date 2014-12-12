@@ -27,15 +27,15 @@ class Land {
     }
     
     func harvest () -> Int {
-        var money :Int
-        let info = CropInfo.self
+//        var money : Int
+//        let info = CropInfo.self
         
         
-        money = CropInfo.soy.price.uninsured
+        var money : Int = CropInfo.soy.money.profit.rawValue
         
-        info.soy.price.uninsured
         
-        return
+        
+        return 2
     }
     
     
