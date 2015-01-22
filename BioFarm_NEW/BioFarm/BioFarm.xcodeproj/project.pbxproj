@@ -19,6 +19,7 @@
 		381C470B1A3B6D4D009C1AC1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C470A1A3B6D4D009C1AC1 /* Options.swift */; };
 		3829B70F1A3A37BE000AF8A5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3829B70E1A3A37BE000AF8A5 /* Event.swift */; };
 		383B4F5E1A3A4A8900EF9120 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B4F5D1A3A4A8900EF9120 /* Money.swift */; };
+		EB65AFED1A71BE02006A4235 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB65AFEC1A71BE02006A4235 /* OptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		381C470A1A3B6D4D009C1AC1 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Options.swift; path = ../Options.swift; sourceTree = "<group>"; };
 		3829B70E1A3A37BE000AF8A5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		383B4F5D1A3A4A8900EF9120 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		EB65AFEC1A71BE02006A4235 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				1DC5BB561A37AA4400F8DA6F /* ViewController.swift */,
 				3829B70E1A3A37BE000AF8A5 /* Event.swift */,
 				383B4F5D1A3A4A8900EF9120 /* Money.swift */,
+				EB65AFEC1A71BE02006A4235 /* OptionsViewController.swift */,
 				381C470A1A3B6D4D009C1AC1 /* Options.swift */,
 				1DC5BB581A37AA4400F8DA6F /* Main.storyboard */,
 				1DC5BB5D1A37AA4400F8DA6F /* LaunchScreen.xib */,
@@ -232,6 +235,7 @@
 				1DC5BB571A37AA4400F8DA6F /* ViewController.swift in Sources */,
 				1D62BF031A3B6266003FF4AB /* Farm.swift in Sources */,
 				383B4F5E1A3A4A8900EF9120 /* Money.swift in Sources */,
+				EB65AFED1A71BE02006A4235 /* OptionsViewController.swift in Sources */,
 				3829B70F1A3A37BE000AF8A5 /* Event.swift in Sources */,
 				381C470B1A3B6D4D009C1AC1 /* Options.swift in Sources */,
 				1DC5BB551A37AA4400F8DA6F /* AppDelegate.swift in Sources */,

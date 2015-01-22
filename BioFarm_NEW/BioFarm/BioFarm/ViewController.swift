@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var lbl0: UILabel!
+    @IBOutlet var playButton: UIButton!
+    @IBOutlet var optionsButton: UIButton!
    
 
     override func viewDidLoad() {
@@ -23,17 +25,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func play(sender: UIButton) {
+    @IBAction func play(sender: AnyObject) {
         
         //open new gameplay view
-        lbl0.text = "Play";
+        lbl0.text = "Play"
         
     }
     
-    @IBAction func options(sender: UIButton) {
+    @IBAction func options(sender: AnyObject) {
         
         //open new options view
-        lbl0.text = "Options";
+        lbl0.text = "Options"
         
     }
     
