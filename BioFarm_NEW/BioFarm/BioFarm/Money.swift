@@ -19,11 +19,11 @@ class Money{
     }
     
     func add(amount : Double){
-        cash += amount
+        cash = cash + amount
     }
     
     func sub(amount : Double){
-        cash -= amount
+        cash = cash - amount
     }
     
     func getCash() -> Double{

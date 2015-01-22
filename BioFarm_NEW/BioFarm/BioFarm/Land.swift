@@ -14,30 +14,21 @@ import Foundation
 //}
 
 class Land {
-    private var crop : Crop?
-    //    var type : LandType
+    private var crop : Crop
     private let size : Int
+
     
     init(size : Int) {
         self.size = size
+        crop = Crop(typeGiven: CropType.Empty, insuredGiven: false)
     }
     
-    func plant (toPlant : Crop){
+    func plant (toPlant : Crop) -> Double{
         crop = toPlant
+        return crop.getCost()
     }
     
-    func harvest () -> Int {
-//        var money : Int
-//        let info = CropInfo.self
-        
-        
-        var money : Int = CropInfo.soy.money.profit.rawValue
-        
-        
-        
-        return 2
+    func harvest () -> Double{
+        return self.crop.getProfit() * Double(self.size)
     }
-    
-    
-    
 }

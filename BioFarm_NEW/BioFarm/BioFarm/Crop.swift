@@ -12,55 +12,11 @@ enum CropType {
     case Corn
     case Grass
     case Soy
-}
-
-struct CropInfo {
-
-    struct corn {
-        enum money : Int {
-            case insured = 800
-            case uninsured = 600
-            case profit = 900
-        }
-        
-        enum sprites : String {
-            case sprite_1 = "corn"
-        }
-        
-    }
-    
-    struct soy {
-        enum money : Int {
-            case insured = 600
-            case uninsured = 450
-            case profit = 750
-        }
-        
-        enum sprites : String {
-            case sprite_1 = "soybean"
-        }
-        
-    }
-    
-    struct grass {
-        enum money : Int {
-            case uninsured = 150
-            case profit = 300
-        }
-        
-        enum sprites : String {
-            case sprite_1 = "switchgrass"
-        }
-        
-    }
-    
-    
-    
-    
+    case Empty
 }
 
 class Crop  {
-    private var type = CropType.Corn
+    private var type : CropType
     private var insured : Bool
     
     
@@ -74,6 +30,46 @@ class Crop  {
     */
     func getCrop() -> CropType {
         return self.type
+    }
+    
+    func getCost() -> Double {
+        switch type {
+        case .Corn :
+                if(insured) {
+                    return 800
+                }
+                else {
+                    return 600
+                }
+        case .Soy :
+                if(insured){
+                    return 600
+                }
+                else {
+                    return 450
+                }
+        case .Grass : return 150
+        case .Empty : return 0
+        }
+        
+    }
+    
+    func getProfit() -> Double {
+        switch type {
+        case .Corn : return 900
+        case .Soy : return 750
+        case .Grass : return 300
+        case .Empty : return 0
+        }
+    }
+    
+    func getSprite() -> String {
+        switch type {
+        case .Corn : return "corn"
+        case .Soy : return "soy"
+        case .Grass : return "switchgrass"
+        case .Empty : return ""
+        }
     }
     
     func isInsured() -> Bool {
