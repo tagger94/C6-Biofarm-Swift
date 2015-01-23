@@ -13,20 +13,20 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="C6 BioFarm: The Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jep-mb-lGR">
-                                <rect key="frame" x="137" y="188" width="326" height="47"/>
+                                <rect key="frame" x="221" y="188" width="326" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.99215692281723022" green="0.35294118523597717" blue="0.0078431377187371254" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="barn" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-aX-827">
-                                <rect key="frame" x="215" y="28" width="170" height="105"/>
+                                <rect key="frame" x="299" y="28" width="170" height="105"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="ue5-Lx-aDs">
-                                <rect key="frame" x="6" y="413" width="85" height="176"/>
+                                <rect key="frame" x="74" y="417" width="85" height="176"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDW-5k-dSP">
                                 <rect key="frame" x="193" y="322" width="134" height="82"/>
@@ -34,43 +34,42 @@
                                 <color key="textColor" red="0.99215692280000001" green="0.35294118520000001" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-bF-Cqn">
-                                <rect key="frame" x="495" y="423" width="85" height="170"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-se-rhE">
-                                <rect key="frame" x="233" y="284" width="55" height="30"/>
+                                <rect key="frame" x="361" y="284" width="55" height="30"/>
                                 <state key="normal" title="Options">
                                     <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="options:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1fb-wH-w7S"/>
-                                    <segue destination="xMM-AB-dDi" kind="show" id="mMH-x9-Th5"/>
+                                    <segue destination="xMM-AB-dDi" kind="show" id="WDn-Vx-9aA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lad-fA-9ix">
-                                <rect key="frame" x="225" y="243" width="63" height="33"/>
+                                <rect key="frame" x="353" y="243" width="63" height="33"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYe-ge-5v7"/>
+                                    <segue destination="0ih-xw-pyE" kind="show" id="kRs-BD-tBm"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-bF-Cqn">
+                                <rect key="frame" x="644" y="427" width="85" height="170"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.094117656350135803" green="0.61568629741668701" blue="0.14901961386203766" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="lbl0" destination="YDW-5k-dSP" id="RKo-ye-8FP"/>
                         <outlet property="optionsButton" destination="CKf-se-rhE" id="JKF-MK-LPu"/>
                         <outlet property="playButton" destination="lad-fA-9ix" id="Gs1-Iy-KL8"/>
-                        <segue destination="0ih-xw-pyE" kind="show" id="eph-7u-pQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1683" y="-376"/>
+            <point key="canvasLocation" x="-1993" y="-742"/>
         </scene>
         <!--Options-->
         <scene sceneID="WSK-vZ-1Ja">
@@ -81,51 +80,51 @@
                         <viewControllerLayoutGuide type="bottom" id="peb-Rx-vna"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0dN-rh-mYT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dU9-fW-iUi">
-                                <rect key="frame" x="175" y="141" width="250" height="31"/>
+                                <rect key="frame" x="259" y="141" width="250" height="31"/>
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEs-9T-ArE">
-                                <rect key="frame" x="276" y="201" width="51" height="31"/>
+                                <rect key="frame" x="360" y="237" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q73-cS-cIY">
-                                <rect key="frame" x="177" y="105" width="66" height="28"/>
+                                <rect key="frame" x="351" y="105" width="66" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OFF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8H-3h-IlD">
-                                <rect key="frame" x="381" y="201" width="42" height="31"/>
+                                <rect key="frame" x="465" y="237" width="42" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ON" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJg-Jh-ar1">
-                                <rect key="frame" x="177" y="201" width="42" height="31"/>
+                                <rect key="frame" x="261" y="237" width="42" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7Z-VH-hTU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
-                                <items>
-                                    <navigationItem title="Options" prompt="Go back" id="kj7-EJ-rFH"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
+                    <navigationItem key="navigationItem" title="Options Back Button" id="wzF-8A-tsD">
+                        <barButtonItem key="backBarButtonItem" image="NR-barn" id="8BP-WY-NFH">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="musicSwitch" destination="hEs-9T-ArE" id="94I-BD-IQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qn-wf-YJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="2cb-9a-vMJ"/>
             </objects>
-            <point key="canvasLocation" x="-2012" y="547"/>
+            <point key="canvasLocation" x="-2455" y="699"/>
         </scene>
         <!--Game-->
         <scene sceneID="fZu-qT-ad3">
@@ -136,17 +135,27 @@
                         <viewControllerLayoutGuide type="bottom" id="kx5-1E-APK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FEI-h5-Eue">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3D-jA-pr2">
+                                <rect key="frame" x="351" y="61" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nir-T3-L1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1420" y="547"/>
+            <point key="canvasLocation" x="-1536" y="715"/>
         </scene>
     </scenes>
     <resources>
+        <image name="NR-barn" width="256" height="158"/>
         <image name="barn" width="170" height="105"/>
         <image name="switchgrass" width="85" height="170"/>
     </resources>
