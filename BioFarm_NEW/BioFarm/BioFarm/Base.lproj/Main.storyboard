@@ -163,12 +163,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87L-bi-9mq">
-                                <rect key="frame" x="21" y="95" width="61" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDN-hT-yUj">
                                 <rect key="frame" x="90" y="95" width="163" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -182,21 +176,85 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="start:" destination="0ih-xw-pyE" eventType="touchUpInside" id="TcU-g6-ndd"/>
+                                    <action selector="start:" destination="0ih-xw-pyE" eventType="touchUpInside" id="VfG-bm-4rx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haR-dm-3uJ">
+                                <rect key="frame" x="16" y="136" width="58" height="30"/>
+                                <state key="normal" title="Farm 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="evP-8u-UxC" kind="popoverPresentation" popoverAnchorView="haR-dm-3uJ" id="YN8-jZ-mo9">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzf-1I-lub">
+                                <rect key="frame" x="16" y="181" width="121" height="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87L-bi-9mq">
+                                <rect key="frame" x="16" y="95" width="61" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="moneyLabel" destination="RDN-hT-yUj" id="6Cf-cb-gOG"/>
-                        <outlet property="start" destination="7y8-cT-3a5" id="lQj-qv-4ix"/>
+                        <outlet property="startButton" destination="7y8-cT-3a5" id="j3h-0X-XLS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nir-T3-L1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1772" y="551.5"/>
+            <point key="canvasLocation" x="-780" y="585"/>
+        </scene>
+        <!--Buy View Controller-->
+        <scene sceneID="AAs-ZP-bJJ">
+            <objects>
+                <viewController id="evP-8u-UxC" customClass="BuyViewController" customModule="BioFarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Ts-uu-izn"/>
+                        <viewControllerLayoutGuide type="bottom" id="c8z-ol-cwn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fkz-en-ffF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nk0-og-qDz">
+                                <rect key="frame" x="0.0" y="13" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Buy Screen" id="Ccf-EA-wHP">
+                                        <barButtonItem key="leftBarButtonItem" title="X" id="Wtn-gu-eQN">
+                                            <connections>
+                                                <segue destination="0ih-xw-pyE" kind="show" id="zxj-Dx-L1T"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRL-pT-pS1">
+                                <rect key="frame" x="16" y="88" width="123" height="47"/>
+                                <state key="normal" title="Buy Switch Grass">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buySwitchGrass:" destination="evP-8u-UxC" eventType="touchUpInside" id="fMW-m6-Mxq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4m-4n-rCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-729" y="1552"/>
         </scene>
     </scenes>
     <resources>
@@ -205,6 +263,7 @@
         <image name="switchgrass" width="85" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="zxj-Dx-L1T"/>
         <segue reference="1KJ-g2-bYl"/>
     </inferredMetricsTieBreakers>
 </document>

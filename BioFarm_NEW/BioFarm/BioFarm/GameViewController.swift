@@ -13,6 +13,16 @@ class GameViewController : UIViewController{
     
     @IBOutlet var moneyLabel : UILabel!
     @IBOutlet var startButton : UIButton!
+    @IBOutlet var farm1Button : UIButton!
+    
+    @IBAction func start(sender: AnyObject) {
+        var farmMoney = Money()
+        moneyLabel.text = String(format:"$%.2f", farmMoney.getCash());
+    }
+    
+    func refreshPlay(){
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +33,5 @@ class GameViewController : UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func start(sender: AnyObject) {
-        var farmMoney = Money()
-        moneyLabel.text = String(format:"%f", farmMoney.getCash());
-        
-    }
-
-    
-    
-    
     
 }
