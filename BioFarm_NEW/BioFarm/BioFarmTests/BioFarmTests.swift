@@ -9,10 +9,20 @@
 import UIKit
 import XCTest
 
+//import BioFarm
+
 class BioFarmTests: XCTestCase {
+    
+    
+    
     
     override func setUp() {
         super.setUp()
+        
+        
+//        let testFarm = Farm()
+        
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -26,11 +36,11 @@ class BioFarmTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measureBlock() {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
     
 }
