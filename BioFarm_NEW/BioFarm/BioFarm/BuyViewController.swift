@@ -12,6 +12,7 @@ import UIKit
 class BuyViewController: UIViewController {
     
     @IBOutlet var switchGrassButton : UIButton!
+    @IBOutlet var farm1Label : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,9 @@ class BuyViewController: UIViewController {
     }
     
     @IBAction func buySwitchGrass(sender: AnyObject) {
-        
+        if(farm1Label != nil){
+            farm1Label.text = "You Just Bought Switch Grass"
+        }
     }
     
 }

@@ -19,7 +19,7 @@ public class Farm {
     }
     
     private func totalProfit() -> Double{
-        var sum : Int = 0
+        var sum : Double = 0
         var e = Event()
         
         var modifier: Double = e.doEvent()
@@ -36,9 +36,9 @@ public class Farm {
         cash.add(amount)
     }
     
-    func plantCrops(farm : String, cropToPlant : Crop){
-        farmLand[farm]?.plant(cropToPlant)
-        //plants crop animation
+    func plantCrops(farm : String, cropToPlant : Crop) -> Double{
+        return farmLand[farm]!.plant(cropToPlant)
+        //plant crop animation
     }
     
 }
