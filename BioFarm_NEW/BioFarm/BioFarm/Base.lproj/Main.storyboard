@@ -168,7 +168,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="evP-8u-UxC" kind="popoverPresentation" popoverAnchorView="haR-dm-3uJ" id="YN8-jZ-mo9">
+                                    <segue destination="evP-8u-UxC" kind="popoverPresentation" identifier="idf" popoverAnchorView="haR-dm-3uJ" id="S53-wg-7HN">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -192,6 +192,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeE-sD-nMY">
+                                <rect key="frame" x="95" y="140" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -199,6 +205,7 @@
                     <connections>
                         <outlet property="farm1Button" destination="haR-dm-3uJ" id="5kL-O3-1fk"/>
                         <outlet property="farm1Label" destination="Rgd-xd-jJO" id="1f0-Co-8Zc"/>
+                        <outlet property="labelFarm1Price" destination="eeE-sD-nMY" id="oGx-wc-kHY"/>
                         <outlet property="moneyLabel" destination="RDN-hT-yUj" id="WJt-He-4zf"/>
                     </connections>
                 </viewController>
@@ -232,13 +239,12 @@
                                     <action selector="changeInsur:" destination="evP-8u-UxC" eventType="valueChanged" id="eWZ-ms-kSc"/>
                                 </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDn-32-GuY">
-                                <rect key="frame" x="204" y="505" width="100" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Buy">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insured" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX3-Uq-Q4s">
+                                <rect key="frame" x="16" y="358" width="191" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculation" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vv-oA-wDk">
                                 <rect key="frame" x="16" y="397" width="266" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -252,7 +258,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vr3-bN-Jq2">
-                                <rect key="frame" x="16" y="35" width="288" height="67.5"/>
+                                <rect key="frame" x="16" y="28" width="288" height="67.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vr3-bN-Jq2" secondAttribute="height" multiplier="72:18" id="lPD-lc-wiO"/>
@@ -262,16 +268,25 @@
                                     <segment title="Soybean"/>
                                     <segment title="Switchgrass"/>
                                 </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lPD-lc-wiO"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="cropUpdate:" destination="evP-8u-UxC" eventType="valueChanged" id="tDr-qI-6wW"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insured" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX3-Uq-Q4s">
-                                <rect key="frame" x="16" y="358" width="191" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDn-32-GuY">
+                                <rect key="frame" x="229" y="505" width="100" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Buy">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buy:" destination="evP-8u-UxC" eventType="touchUpInside" id="lBP-kb-9t8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647707462311" green="0.49411767721176147" blue="0.14117647707462311" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -289,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4m-4n-rCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1986" y="633.5"/>
+            <point key="canvasLocation" x="-2317" y="589"/>
         </scene>
         <!--Navigation 1-->
         <scene sceneID="2OH-gP-NaN">

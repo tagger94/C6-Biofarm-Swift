@@ -31,4 +31,8 @@ class Land {
     func harvest () -> Double{
         return self.crop.getProfit() * Double(self.size)
     }
+    
+    func getSize () -> Int {
+        return size
+    }
 }

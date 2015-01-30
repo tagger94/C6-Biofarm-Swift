@@ -25,6 +25,11 @@ class Crop  {
         insured = insuredGiven
     }
     
+    init() {
+        type = CropType.Empty
+        insured = false
+    }
+    
     /*
     * Getters and Setters
     */
