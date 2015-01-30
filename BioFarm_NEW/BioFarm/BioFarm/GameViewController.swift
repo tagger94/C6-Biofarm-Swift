@@ -19,9 +19,13 @@ class GameViewController : UIViewController{
     var farmMoney = Money()
     
     func refreshPlay(){
-        if(moneyLabel != nil){
+        println(moneyLabel)
+        //if(moneyLabel != nil){
+            println(moneyLabel.text)
+            println("TEST WORKED")
             moneyLabel.text = String(format: "$%.2f", farmMoney.getCash())
-        }
+            println(moneyLabel.text)
+        //}
     }
 
     override func viewDidLoad() {

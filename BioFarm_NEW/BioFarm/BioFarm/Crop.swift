@@ -49,9 +49,18 @@ class Crop  {
                     return 450
                 }
         case .Grass : return 150
-        case .Empty : return 0
+        case .Empty : return 7
         }
         
+    }
+    
+    func getCropName() ->String {
+        switch type {
+        case .Corn: return "Corn"
+        case .Soy: return "Soybean"
+        case .Grass: return "Switchgrass"
+        case .Empty: return ""
+        }
     }
     
     func getProfit() -> Double {
@@ -65,15 +74,23 @@ class Crop  {
     
     func getSprite() -> String {
         switch type {
-        case .Corn : return "corn"
-        case .Soy : return "soy"
-        case .Grass : return "switchgrass"
+        case .Corn : return "NR-corn.png"
+        case .Soy : return "NR-soybean.png"
+        case .Grass : return "NR-switchgrass.png"
         case .Empty : return ""
         }
     }
     
     func isInsured() -> Bool {
         return insured
+    }
+    
+    func setCrop (newCrop : CropType) {
+        type = newCrop
+    }
+    
+    func setInsured (newInsured : Bool) {
+        insured = newInsured
     }
     
     

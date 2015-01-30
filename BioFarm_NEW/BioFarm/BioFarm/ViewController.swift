@@ -13,10 +13,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbl0: UILabel!
     @IBOutlet var playButton: UIButton!
     @IBOutlet var optionsButton: UIButton!
+    @IBOutlet var navigationBar: UINavigationItem!
    
+    @IBOutlet var testLabel: UILabel!
+   
+    @IBOutlet var testButton: UIButton!
 
+    @IBAction func test_1(sender: AnyObject) {
+        testLabel.text = ":D"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.titleView?.hidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,8 +35,8 @@ class ViewController: UIViewController {
 
     @IBAction func play(sender: AnyObject) {
         
-        //open new gameplay view
-        lbl0.text = "Play"
+        //let gameView = self.storyboard?.instantiateViewControllerWithIdentifier("Game") as GameViewController
+        //self.navigationController?.pushViewController(gameView, animated: true)
         
     }
     
