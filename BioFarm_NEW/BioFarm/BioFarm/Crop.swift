@@ -25,7 +25,7 @@ class Crop  {
         insured = insuredGiven
     }
     
-    init() {
+    init () {
         type = CropType.Empty
         insured = false
     }
@@ -64,7 +64,7 @@ class Crop  {
         case .Corn: return "Corn"
         case .Soy: return "Soybean"
         case .Grass: return "Switchgrass"
-        case .Empty: return ""
+        case .Empty: return "Empty"
         }
     }
     

@@ -16,9 +16,7 @@
 		1DC5BB5F1A37AA4400F8DA6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DC5BB5D1A37AA4400F8DA6F /* LaunchScreen.xib */; };
 		1DC5BB6B1A37AA4500F8DA6F /* BioFarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5BB6A1A37AA4500F8DA6F /* BioFarmTests.swift */; };
 		381381A21A3B602300CF8853 /* Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381381A11A3B602300CF8853 /* Crop.swift */; };
-		381C470B1A3B6D4D009C1AC1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C470A1A3B6D4D009C1AC1 /* Options.swift */; };
 		3829B70F1A3A37BE000AF8A5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3829B70E1A3A37BE000AF8A5 /* Event.swift */; };
-		383B4F5E1A3A4A8900EF9120 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B4F5D1A3A4A8900EF9120 /* Money.swift */; };
 		EB0CCBD91A72F4C8002E6134 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0CCBD81A72F4C8002E6134 /* GameViewController.swift */; };
 		EB65AFED1A71BE02006A4235 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB65AFEC1A71BE02006A4235 /* OptionsViewController.swift */; };
 		EBE4F1181A74571200C27A13 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4F1171A74571200C27A13 /* BuyViewController.swift */; };
@@ -48,9 +46,7 @@
 		1DC5BB691A37AA4500F8DA6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DC5BB6A1A37AA4500F8DA6F /* BioFarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioFarmTests.swift; sourceTree = "<group>"; };
 		381381A11A3B602300CF8853 /* Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
-		381C470A1A3B6D4D009C1AC1 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Options.swift; path = ../Options.swift; sourceTree = "<group>"; };
 		3829B70E1A3A37BE000AF8A5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		383B4F5D1A3A4A8900EF9120 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		EB0CCBD81A72F4C8002E6134 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EB65AFEC1A71BE02006A4235 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		EBE4F1171A74571200C27A13 /* BuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
@@ -100,12 +96,10 @@
 				EBE4F1171A74571200C27A13 /* BuyViewController.swift */,
 				EB0CCBD81A72F4C8002E6134 /* GameViewController.swift */,
 				EB65AFEC1A71BE02006A4235 /* OptionsViewController.swift */,
-				381381A11A3B602300CF8853 /* Crop.swift */,
 				1D62BF021A3B6266003FF4AB /* Farm.swift */,
-				3829B70E1A3A37BE000AF8A5 /* Event.swift */,
 				1D0246221A3A391A009A37EE /* Land.swift */,
-				383B4F5D1A3A4A8900EF9120 /* Money.swift */,
-				381C470A1A3B6D4D009C1AC1 /* Options.swift */,
+				381381A11A3B602300CF8853 /* Crop.swift */,
+				3829B70E1A3A37BE000AF8A5 /* Event.swift */,
 				1DC5BB581A37AA4400F8DA6F /* Main.storyboard */,
 				1DC5BB5D1A37AA4400F8DA6F /* LaunchScreen.xib */,
 				1DC5BB5B1A37AA4400F8DA6F /* Images.xcassets */,
@@ -242,10 +236,8 @@
 				1DC5BB571A37AA4400F8DA6F /* ViewController.swift in Sources */,
 				EBE4F1181A74571200C27A13 /* BuyViewController.swift in Sources */,
 				1D62BF031A3B6266003FF4AB /* Farm.swift in Sources */,
-				383B4F5E1A3A4A8900EF9120 /* Money.swift in Sources */,
 				EB65AFED1A71BE02006A4235 /* OptionsViewController.swift in Sources */,
 				3829B70F1A3A37BE000AF8A5 /* Event.swift in Sources */,
-				381C470B1A3B6D4D009C1AC1 /* Options.swift in Sources */,
 				1DC5BB551A37AA4400F8DA6F /* AppDelegate.swift in Sources */,
 				1D0246231A3A391A009A37EE /* Land.swift in Sources */,
 				381381A21A3B602300CF8853 /* Crop.swift in Sources */,

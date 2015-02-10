@@ -10,125 +10,130 @@ import Foundation
 import UIKit
 
 class BuyViewController: UIViewController {
-    
+
     // Segment Controller for crop choice
-    @IBOutlet var segmentBuyChoice: UISegmentedControl!
+    @IBOutlet var seg_CropChoice: UISegmentedControl!
     
     // Labels
-    @IBOutlet var labelCalculation: UILabel!
-    @IBOutlet var labelInsur: UILabel!
-    @IBOutlet var labelPrice: UILabel!
+    @IBOutlet var lbl_Calculation: UILabel!
+    @IBOutlet var lbl_Insur: UILabel!
+    @IBOutlet var lbl_Price: UILabel!
     
     // Switch
-    @IBOutlet var switchInsur: UISwitch!
+    @IBOutlet var swt_Insur: UISwitch!
     
     // Images
-    @IBOutlet var imageCrop: UIImageView!
+    @IBOutlet var img_Crop: UIImageView!
     
     // Buttons
-    @IBOutlet var buttonBuy: UIButton!
+    @IBOutlet var btn_Buy: UIButton!
+    
     
     // Internal Variables
     var isInsured : Bool = true
-    var isBought : Bool = false
-   
-    
-    
-    // Values passed from GameView
-    var selectedFarm : String = ""
-    var acres : Int = 100
-    
-    // Values to Pass Back to GameView
+    //var isBought : Bool = false
     var cropToBuy : Crop = Crop() //gets price and eventually returns this for setting land value
     var calculatedCost : Double = 0;
     
+    // Values passed from GameView
+    var selectedFarm : String = ""
+    var farm : Farm?
+    
     @IBAction func cropUpdate(sender: AnyObject) {
-        if(!isBought) {
-            switch segmentBuyChoice.selectedSegmentIndex {
+        
+        switch seg_CropChoice.selectedSegmentIndex {
                 
-            case 0: cropToBuy = Crop(typeGiven: CropType.Corn, insuredGiven: isInsured)
-            imageCrop.image = UIImage(named: cropToBuy.getSprite())
-            switchInsur.hidden = false
-            changeInsur(self)
+        // Corn
+        case 0: cropToBuy = Crop(typeGiven: CropType.Corn, insuredGiven: isInsured)
+        swt_Insur.hidden = false
+            
                 
-                
-                
-            case 1: cropToBuy = Crop(typeGiven: CropType.Soy, insuredGiven: isInsured)
-            imageCrop.image = UIImage(named: cropToBuy.getSprite())
-            switchInsur.hidden = false
-            changeInsur(self)
-                
-                
-                
-            case 2: cropToBuy = Crop(typeGiven: CropType.Grass, insuredGiven: isInsured)
-            imageCrop.image = UIImage(named: cropToBuy.getSprite())
-            switchInsur.hidden = true
-            switchInsur.setOn(false, animated: false) //changes insure switch off since switch grass has no insurance
-            changeInsur(self)
-                
-                
-            default: break
-            }
-        }
+        // Soybean
+        case 1: cropToBuy = Crop(typeGiven: CropType.Soy, insuredGiven: isInsured)
+        swt_Insur.hidden = false
+            
+            
+        // Switchgrass
+        case 2: cropToBuy = Crop(typeGiven: CropType.Grass, insuredGiven: isInsured)
+        swt_Insur.hidden = true
+        swt_Insur.setOn(false, animated: false) //changes insure switch off since switch grass has no insurance
+            
+            
+        default: break
+        }// End Switchcase
+        
+        //Change Display Sprite
+        img_Crop.image = UIImage(named: cropToBuy.getSprite())
+        //Update Insur Policy
+        changeInsur(self)
         
     }
     
     @IBAction func changeInsur(sender: AnyObject) {
-        if(!isBought) {
-            isInsured = switchInsur.on
-            if(isInsured) {
-                labelInsur.text = "You are insured"
-            } else {
-                labelInsur.text = "You are not insured"
-            }
-            cropToBuy.setInsured(isInsured)
-            updateCalculation()
+        
+        // Change insur on crop
+        cropToBuy.setInsured(swt_Insur.on)
+        if(cropToBuy.isInsured()) {
+            lbl_Insur.text = "You are insured"
+        } else {
+            lbl_Insur.text = "You are not insured"
         }
+        //Calls update on calculation text field
+        updateCalculation()
     }
     
-    @IBAction func buy(sender: AnyObject) {
-        isBought = true
-        buttonBuy.hidden = true
-        println(calculatedCost)
-        dismissViewControllerAnimated(true, completion: nil)
-        // TODO : Find way to segue back to GameView
-    }
-    
-    
-    func clearLabels () {
-        changeInsur(self)
-        labelCalculation.text = ""
+    @IBAction func buy() {
+        //Plant Crops and Subtract Money
+        if(farm?.getCrops(selectedFarm).getCropName() == "Empty") {
+            farm?.subMoney(farm!.plantCrops(selectedFarm, cropToPlant: cropToBuy))
+        }
+        //Dismiss Popover
+        dismissViewControllerAnimated(true, nil)
     }
     
     func updateCalculation () {
-        labelCalculation.text = String(format: "%@: \nnumber of acres [%d] * \nprice of crop [%.2f]", cropToBuy.getCropName(), acres, cropToBuy.getCost())
-        calculatedCost = cropToBuy.getCost() * Double(acres)
-        labelPrice.text = String(format: "$%.2f", calculatedCost)
+        if(farm?.getCrops(selectedFarm).getCropName() == "Empty") {
+            lbl_Calculation.text = String(format: "%@: \nnumber of acres %.0f * \nprice of crop %.2f", cropToBuy.getCropName(), farm!.getLandSize(selectedFarm), cropToBuy.getCost())
+            calculatedCost = cropToBuy.getCost() * farm!.getLandSize(selectedFarm)
+            lbl_Price.text = String(format: "$%.2f", calculatedCost)
+        } else {
+            lbl_Calculation.text = "Land already purchased"
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        cropUpdate(self)
+        
+        //Check to see if land has been purchased
+        if(farm?.getCrops(selectedFarm).getCropName() != "Empty") {
+            //Hide objects not used anymore
+            seg_CropChoice.hidden = true
+            btn_Buy.hidden = true
+            swt_Insur.hidden = true
+            lbl_Calculation.hidden = true
+            
+            //Show Price of land
+            lbl_Price.text = String(format: "$%.2f", farm!.getCrops(selectedFarm).getCost() * farm!.getLandSize(selectedFarm))
+            
+            //Set Insure
+            if(farm!.getCrops(selectedFarm).isInsured()) {
+                lbl_Insur.text = "You are insured"
+            } else {
+                lbl_Insur.text = "You are not insured"
+            }
+            
+            //Set Crop Image
+            img_Crop.image = UIImage(named: farm!.getCrops(selectedFarm).getSprite())
+            
+        } else {
+            cropUpdate(self)
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var dest : GameViewController = segue.destinationViewController as GameViewController
-        println("YEAH")
-//        if(isBought) {
-            // Plants selected crop
-            dest.megaFarm.farmLand[selectedFarm]?.plant(cropToBuy)
-            // Deducts money
-            dest.megaFarm.subMoney(calculatedCost)
-//        }
-        println(dest.megaFarm.getCash())
-        dest.viewDidLoad()
-//        dest.refreshPlay() //Does not update over view
-        dest.delete(self)
     }
 }

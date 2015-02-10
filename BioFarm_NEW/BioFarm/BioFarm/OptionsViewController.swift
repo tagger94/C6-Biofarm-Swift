@@ -11,7 +11,7 @@ import UIKit
 
 class OptionsViewController : UIViewController{
     
-    @IBOutlet var musicSwitch: UISwitch!
+    @IBOutlet var swt_Music: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()

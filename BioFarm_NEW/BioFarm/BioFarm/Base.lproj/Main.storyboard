@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DrG-t5-Gts">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main-->
@@ -23,11 +22,11 @@
                                 <color key="textColor" red="0.99215692281723022" green="0.35294118523597717" blue="0.0078431377187371254" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="barn" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-aX-827">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="R-barn" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-aX-827">
                                 <rect key="frame" x="299" y="88" width="170" height="105"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="ue5-Lx-aDs">
-                                <rect key="frame" x="74" y="417" width="85" height="176"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="R-corn" translatesAutoresizingMaskIntoConstraints="NO" id="ue5-Lx-aDs">
+                                <rect key="frame" x="74" y="417" width="72" height="189"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDW-5k-dSP">
                                 <rect key="frame" x="193" y="322" width="134" height="82"/>
@@ -36,61 +35,39 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-se-rhE">
-                                <rect key="frame" x="357" y="329" width="55" height="30"/>
+                                <rect key="frame" x="345" y="329" width="78" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Options">
                                     <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xMM-AB-dDi" kind="show" id="kGf-hd-m2A"/>
+                                    <segue destination="xMM-AB-dDi" kind="show" identifier="toOptionsViewID" id="kGf-hd-m2A"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-bF-Cqn">
-                                <rect key="frame" x="644" y="427" width="85" height="170"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="R-soybean" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-bF-Cqn">
+                                <rect key="frame" x="582" y="429" width="147" height="166"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lad-fA-9ix">
-                                <rect key="frame" x="357" y="288" width="63" height="33"/>
+                                <rect key="frame" x="353" y="288" width="63" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HPo-AI-YQM"/>
-                                    <segue destination="0ih-xw-pyE" kind="show" id="ciV-5O-vFz"/>
+                                    <segue destination="0ih-xw-pyE" kind="show" identifier="toGameViewID" id="ciV-5O-vFz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BA2-AV-s0G">
-                                <rect key="frame" x="365" y="379" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="test_1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wZb-Ni-VMZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lul-6I-ceE">
-                                <rect key="frame" x="357" y="410" width="104" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490868091583" green="0.55686277151107788" blue="0.14901961386203766" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title=":)" id="hlY-1f-NdL"/>
+                    <navigationItem key="navigationItem" title="Main Menu" id="hlY-1f-NdL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
-                    <connections>
-                        <outlet property="lbl0" destination="YDW-5k-dSP" id="RKo-ye-8FP"/>
-                        <outlet property="navigationBar" destination="hlY-1f-NdL" id="gwH-1c-0l6"/>
-                        <outlet property="optionsButton" destination="CKf-se-rhE" id="JKF-MK-LPu"/>
-                        <outlet property="playButton" destination="lad-fA-9ix" id="Gs1-Iy-KL8"/>
-                        <outlet property="testButton" destination="BA2-AV-s0G" id="fzR-A2-guR"/>
-                        <outlet property="testLabel" destination="lul-6I-ceE" id="iEl-IF-wNx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2939" y="-675"/>
+            <point key="canvasLocation" x="-2947" y="-670"/>
         </scene>
         <!--Options-->
         <scene sceneID="WSK-vZ-1Ja">
@@ -163,55 +140,201 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haR-dm-3uJ">
-                                <rect key="frame" x="16" y="136" width="58" height="30"/>
+                                <rect key="frame" x="22" y="135" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Farm 1">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="evP-8u-UxC" kind="popoverPresentation" identifier="idf" popoverAnchorView="haR-dm-3uJ" id="S53-wg-7HN">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="CTa-YH-Thj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzf-1I-lub">
-                                <rect key="frame" x="16" y="181" width="121" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDN-hT-yUj">
-                                <rect key="frame" x="85" y="95" width="163" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsR-mu-m5k">
+                                <rect key="frame" x="22" y="173" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Farm 2">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="Wgd-fj-SFa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4n-R8-IKn">
+                                <rect key="frame" x="22" y="211" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Farm 3">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="bac-GM-bvE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKQ-yR-brl">
+                                <rect key="frame" x="22" y="249" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Farm 4">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="TX2-cF-HUa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXg-ai-Zzp">
+                                <rect key="frame" x="22" y="287" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Farm 5">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="6XZ-mL-Z40"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmk-P9-zFc">
+                                <rect key="frame" x="22" y="325" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Farm 6">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="Onv-vx-ApH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiZ-sQ-Tsh">
+                                <rect key="frame" x="22" y="363" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Farm 7">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="gVF-Ll-wAH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDC-FL-F5n">
+                                <rect key="frame" x="22" y="401" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Farm 8">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="LWi-bq-DJq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDN-hT-yUj">
+                                <rect key="frame" x="85" y="98" width="172" height="33"/>
                                 <accessibility key="accessibilityConfiguration" label="label1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.94901967050000002" green="1" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgd-xd-jJO">
-                                <rect key="frame" x="16" y="181" width="697" height="75"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 1 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeE-sD-nMY">
+                                <rect key="frame" x="101" y="139" width="209" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeE-sD-nMY">
-                                <rect key="frame" x="95" y="140" width="153" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 2 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNP-OO-XZF">
+                                <rect key="frame" x="101" y="177" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 3 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCd-iV-01J">
+                                <rect key="frame" x="101" y="215" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 4 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-VV-9DN">
+                                <rect key="frame" x="101" y="253" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 5 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfU-tL-OJc">
+                                <rect key="frame" x="101" y="291" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 6 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmV-Oj-Yxt">
+                                <rect key="frame" x="101" y="329" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 7 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhn-Zw-57o">
+                                <rect key="frame" x="101" y="367" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAS-jo-gut">
+                                <rect key="frame" x="629" y="72" width="123" height="123"/>
+                                <state key="normal" title="Harvest" backgroundImage="NR-soil_good">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="harvestYear:" destination="0ih-xw-pyE" eventType="touchUpInside" id="WXN-No-ubC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year Info" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmB-Zy-N14">
+                                <rect key="frame" x="581" y="203" width="171" height="95"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="R-bar_money" translatesAutoresizingMaskIntoConstraints="NO" id="DUg-Am-vL4">
+                                <rect key="frame" x="0.0" y="72" width="299" height="66"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="R-barn" translatesAutoresizingMaskIntoConstraints="NO" id="hJn-aq-mgf">
+                                <rect key="frame" x="455" y="337" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 8 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4Z-IR-4kE">
+                                <rect key="frame" x="101" y="405" width="209" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14117647707462311" green="0.49411767721176147" blue="0.14117647707462311" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <outlet property="farm1Button" destination="haR-dm-3uJ" id="5kL-O3-1fk"/>
-                        <outlet property="farm1Label" destination="Rgd-xd-jJO" id="1f0-Co-8Zc"/>
-                        <outlet property="labelFarm1Price" destination="eeE-sD-nMY" id="oGx-wc-kHY"/>
-                        <outlet property="moneyLabel" destination="RDN-hT-yUj" id="WJt-He-4zf"/>
+                        <outlet property="btn_Farm1" destination="haR-dm-3uJ" id="SBX-re-yn4"/>
+                        <outlet property="btn_Farm2" destination="qsR-mu-m5k" id="DPv-sF-Crf"/>
+                        <outlet property="btn_Farm3" destination="O4n-R8-IKn" id="qjO-Th-6YC"/>
+                        <outlet property="btn_Farm4" destination="XKQ-yR-brl" id="oFp-bX-J8a"/>
+                        <outlet property="btn_Farm5" destination="wXg-ai-Zzp" id="1X9-eI-fRS"/>
+                        <outlet property="btn_Farm6" destination="Kmk-P9-zFc" id="XQW-NT-1Vb"/>
+                        <outlet property="btn_Farm7" destination="aiZ-sQ-Tsh" id="d75-gX-SUl"/>
+                        <outlet property="btn_Farm8" destination="WDC-FL-F5n" id="Ugz-ac-Taw"/>
+                        <outlet property="harvestButton" destination="EAS-jo-gut" id="4eb-ls-Pwe"/>
+                        <outlet property="lbl_Farm1" destination="eeE-sD-nMY" id="I5K-Je-yqI"/>
+                        <outlet property="lbl_Farm2" destination="mNP-OO-XZF" id="Kj5-Ie-VCr"/>
+                        <outlet property="lbl_Farm3" destination="aCd-iV-01J" id="21Z-11-Bdy"/>
+                        <outlet property="lbl_Farm4" destination="vGT-VV-9DN" id="MdH-Cv-183"/>
+                        <outlet property="lbl_Farm5" destination="XfU-tL-OJc" id="bah-Vd-bSC"/>
+                        <outlet property="lbl_Farm6" destination="NmV-Oj-Yxt" id="KHz-aD-lT7"/>
+                        <outlet property="lbl_Farm7" destination="dhn-Zw-57o" id="86g-FG-g6V"/>
+                        <outlet property="lbl_Farm8" destination="p4Z-IR-4kE" id="KXd-kb-5n0"/>
+                        <outlet property="lbl_Money" destination="RDN-hT-yUj" id="b0x-xG-T0D"/>
+                        <outlet property="lbl_harvestMod" destination="qmB-Zy-N14" id="0x2-jr-U0J"/>
+                        <segue destination="evP-8u-UxC" kind="popoverPresentation" identifier="toBuyViewID" popoverAnchorView="haR-dm-3uJ" id="3Df-dX-5bZ">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nir-T3-L1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2939" y="589"/>
+            <point key="canvasLocation" x="-2939" y="458"/>
         </scene>
         <!--Buy View Controller-->
         <scene sceneID="AAs-ZP-bJJ">
@@ -257,34 +380,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vr3-bN-Jq2">
-                                <rect key="frame" x="16" y="28" width="288" height="67.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="vr3-bN-Jq2" secondAttribute="height" multiplier="72:18" id="lPD-lc-wiO"/>
-                                </constraints>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VlS-es-wfA">
+                                <rect key="frame" x="16" y="36" width="288" height="29"/>
+                                <color key="backgroundColor" red="0.9490196704864502" green="1" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <segments>
                                     <segment title="Corn"/>
-                                    <segment title="Soybean"/>
+                                    <segment title="Soybeans"/>
                                     <segment title="Switchgrass"/>
                                 </segments>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="lPD-lc-wiO"/>
-                                    </mask>
-                                </variation>
+                                <color key="tintColor" red="0.035294119268655777" green="0.074509806931018829" blue="0.070588238537311554" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
-                                    <action selector="cropUpdate:" destination="evP-8u-UxC" eventType="valueChanged" id="tDr-qI-6wW"/>
+                                    <action selector="cropUpdate:" destination="evP-8u-UxC" eventType="valueChanged" id="Hn3-BZ-hxg"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDn-32-GuY">
-                                <rect key="frame" x="229" y="505" width="100" height="43"/>
+                                <rect key="frame" x="204" y="505" width="100" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Buy">
+                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buy:" destination="evP-8u-UxC" eventType="touchUpInside" id="lBP-kb-9t8"/>
+                                    <action selector="buy" destination="evP-8u-UxC" eventType="touchUpInside" id="ILc-Cj-QOU"/>
+                                    <segue destination="J6n-IR-X4H" kind="unwind" identifier="go" unwindAction="unwindFromBuy:" id="apb-V2-Gs4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -293,18 +411,19 @@
                     <value key="contentSizeForViewInPopover" type="size" width="400" height="600"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="buttonBuy" destination="EDn-32-GuY" id="uzd-RJ-Aov"/>
-                        <outlet property="imageCrop" destination="Xgj-Xk-MG7" id="uI6-Wg-S4H"/>
-                        <outlet property="labelCalculation" destination="7Vv-oA-wDk" id="Qcs-i4-VvX"/>
-                        <outlet property="labelInsur" destination="oX3-Uq-Q4s" id="9yQ-5X-dY0"/>
-                        <outlet property="labelPrice" destination="uEx-eh-net" id="MHu-ZG-IvV"/>
-                        <outlet property="segmentBuyChoice" destination="vr3-bN-Jq2" id="XUe-0F-WML"/>
-                        <outlet property="switchInsur" destination="rnc-Jb-YPh" id="gh5-lF-OwJ"/>
+                        <outlet property="btn_Buy" destination="EDn-32-GuY" id="Lkl-PT-Qfq"/>
+                        <outlet property="img_Crop" destination="Xgj-Xk-MG7" id="c0W-jN-OZV"/>
+                        <outlet property="lbl_Calculation" destination="7Vv-oA-wDk" id="4xf-d3-LZd"/>
+                        <outlet property="lbl_Insur" destination="oX3-Uq-Q4s" id="YSm-ku-O7V"/>
+                        <outlet property="lbl_Price" destination="uEx-eh-net" id="25k-w1-7dX"/>
+                        <outlet property="seg_CropChoice" destination="VlS-es-wfA" id="8wJ-fM-yBt"/>
+                        <outlet property="swt_Insur" destination="rnc-Jb-YPh" id="aYW-45-NvD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4m-4n-rCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="J6n-IR-X4H" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2317" y="589"/>
+            <point key="canvasLocation" x="-2255" y="686"/>
         </scene>
         <!--Navigation 1-->
         <scene sceneID="2OH-gP-NaN">
@@ -327,7 +446,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="barn" width="170" height="105"/>
-        <image name="switchgrass" width="85" height="170"/>
+        <image name="NR-soil_good" width="128" height="128"/>
+        <image name="R-bar_money" width="512" height="128"/>
+        <image name="R-barn" width="512" height="316"/>
+        <image name="R-corn" width="256" height="512"/>
+        <image name="R-soybean" width="256" height="256"/>
     </resources>
 </document>
