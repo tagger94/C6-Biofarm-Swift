@@ -16,6 +16,7 @@ enum CropType {
 }
 
 class Crop  {
+    
     private var type : CropType
     private var insured : Bool
     
@@ -56,7 +57,6 @@ class Crop  {
         case .Grass : return 150
         case .Empty : return 7
         }
-        
     }
     
     func getCropName() ->String {
@@ -97,7 +97,5 @@ class Crop  {
     func setInsured (newInsured : Bool) {
         insured = newInsured
     }
-    
-    
     
 }

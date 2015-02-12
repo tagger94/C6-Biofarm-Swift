@@ -43,23 +43,21 @@ class BuyViewController: UIViewController {
         
         switch seg_CropChoice.selectedSegmentIndex {
                 
-        // Corn
-        case 0: cropToBuy = Crop(typeGiven: CropType.Corn, insuredGiven: isInsured)
-        swt_Insur.hidden = false
+            // Corn
+            case 0: cropToBuy = Crop(typeGiven: CropType.Corn, insuredGiven: isInsured)
+            swt_Insur.hidden = false
             
-                
-        // Soybean
-        case 1: cropToBuy = Crop(typeGiven: CropType.Soy, insuredGiven: isInsured)
-        swt_Insur.hidden = false
+            // Soybean
+            case 1: cropToBuy = Crop(typeGiven: CropType.Soy, insuredGiven: isInsured)
+            swt_Insur.hidden = false
             
-            
-        // Switchgrass
-        case 2: cropToBuy = Crop(typeGiven: CropType.Grass, insuredGiven: isInsured)
-        swt_Insur.hidden = true
-        swt_Insur.setOn(false, animated: false) //changes insure switch off since switch grass has no insurance
+            // Switchgrass
+            case 2: cropToBuy = Crop(typeGiven: CropType.Grass, insuredGiven: isInsured)
+            swt_Insur.hidden = true
+            swt_Insur.setOn(false, animated: false) //changes insure switch off since switch grass has no insurance
             
             
-        default: break
+            default: break
         }// End Switchcase
         
         //Change Display Sprite
@@ -70,7 +68,6 @@ class BuyViewController: UIViewController {
     }
     
     @IBAction func changeInsur(sender: AnyObject) {
-        
         // Change insur on crop
         cropToBuy.setInsured(swt_Insur.on)
         if(cropToBuy.isInsured()) {

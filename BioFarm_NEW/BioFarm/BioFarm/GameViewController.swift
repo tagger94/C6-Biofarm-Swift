@@ -13,7 +13,8 @@ class GameViewController : UIViewController{
     
     //Labels
     @IBOutlet var lbl_Money : UILabel!
-    
+    @IBOutlet var lbl_harvestMod: UILabel!
+    @IBOutlet var lbl_modiferText: UILabel!
     @IBOutlet var lbl_Farm1: UILabel!
     @IBOutlet var lbl_Farm2: UILabel!
     @IBOutlet var lbl_Farm3: UILabel!
@@ -34,45 +35,43 @@ class GameViewController : UIViewController{
     @IBOutlet var btn_Farm8: UIButton!
     @IBOutlet var harvestButton: UIButton!
     
-    @IBOutlet var lbl_harvestMod: UILabel!
-    
-    @IBOutlet var labelFarm1Price: UILabel!
-    
-    
+    //Other Instance Variables
     var selectFarm : String = "F1"
+    var masterFarm : Farm = Farm()
+    private var e : Event = Event()
+    private var modifier: Double = 0.0
+    private var eventText: String = "Nothing Here"
+    private var yearsPassed : Int = 0;
     
-    var megaFarm : Farm = Farm()
-    var e : Event = Event()
-    var modifier = 0.0
-    
-    var yearsPassed : Int = 0
-    
-    func refreshPlay(){
-        println(megaFarm.getCash())
-        lbl_Money.text = String(format: "$%.2f", megaFarm.getCash())
+    func refresh(){
+        //Debug
+        println(masterFarm.getCash())
+        
+        //Updates the amount of money shown
+        lbl_Money.text = String(format: "$%.2f", masterFarm.getCash())
         
         //Update labels for each farm
-        lbl_Farm1.text = String(format: "%.0f acres of %@", megaFarm.getLandSize("F1"), megaFarm.getCrops("F1").getCropName())
-        lbl_Farm2.text = String(format: "%.0f acres of %@", megaFarm.getLandSize("F2"), megaFarm.getCrops("F2").getCropName())
-        lbl_Farm3.text = String(format: "%.0f acres of %@", megaFarm.getLandSize("F3"), megaFarm.getCrops("F3").getCropName())
-        lbl_Farm4.text = String(format: "%.0f acres of %@", megaFarm.getLandSize("F4"), megaFarm.getCrops("F4").getCropName())
-        lbl_Farm5.text = String(format: "%.0f acres of %@", megaFarm.getLandSize("F5"), megaFarm.getCrops("F5").getCropName())
-        lbl_Farm6.text = String(format: "%.0f acres of %@", megaFarm.getLandSize("F6"), megaFarm.getCrops("F6").getCropName())
-        lbl_Farm7.text = String(format: "%.0f acres of %@", megaFarm.getLandSize("F7"), megaFarm.getCrops("F7").getCropName())
-        lbl_Farm8.text = String(format: "%.0f acres of %@", megaFarm.getLandSize("F8"), megaFarm.getCrops("F8").getCropName())
+        lbl_Farm1.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F1"), masterFarm.getCrops("F1").getCropName())
+        lbl_Farm2.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F2"), masterFarm.getCrops("F2").getCropName())
+        lbl_Farm3.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F3"), masterFarm.getCrops("F3").getCropName())
+        lbl_Farm4.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F4"), masterFarm.getCrops("F4").getCropName())
+        lbl_Farm5.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F5"), masterFarm.getCrops("F5").getCropName())
+        lbl_Farm6.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F6"), masterFarm.getCrops("F6").getCropName())
+        lbl_Farm7.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F7"), masterFarm.getCrops("F7").getCropName())
+        lbl_Farm8.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F8"), masterFarm.getCrops("F8").getCropName())
         //TODO: put this in a loop for easier future formating
         
     }
     
     @IBAction func harvestYear(sender: AnyObject) {
         //Set modifier for year
-        modifier = e.doEvent()
+        (modifier, eventText) = e.doEvent()
         
         //Temp Variable for profit
-        var temp_profit = megaFarm.harvestAll(modifier)
+        var temp_profit = masterFarm.harvestAll(modifier)
         
         //Add profit back
-        megaFarm.addMoney(temp_profit)
+        masterFarm.addMoney(temp_profit)
         
         //Increment Year
         yearsPassed++
@@ -80,19 +79,24 @@ class GameViewController : UIViewController{
         //Print Year Results
         lbl_harvestMod.text = String(format: "Year: %d \nModifier: %.2f\nReturn: $%.2f", yearsPassed, modifier, temp_profit)
         
+        //print flavor Text
+        lbl_modiferText.text = eventText
+        
         //Refresh Screen (for crops)
-        refreshPlay()
+        refresh()
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
+        //what runs when this view is first loaded
         super.viewDidLoad()
-        self.refreshPlay()
-        lbl_harvestMod.text = String(format: "Year: %d \nModifier: %.2f\nReturn: $%.2f", yearsPassed, modifier, 0.0)
+        
+        //setting default outputs
+        self.refresh()
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -101,12 +105,12 @@ class GameViewController : UIViewController{
         
         //Forward Variables
         dest.selectedFarm = self.selectFarm
-        dest.farm = megaFarm //Passed by Refrence? So value can be seen by both
+        dest.farm = masterFarm //Passed by Refrence? So value can be seen by both
     }
     
     @IBAction func unwindFromBuy(unwindSegue: UIStoryboardSegue){
         //When return from other BuyView, Refresh
-        refreshPlay()
+        refresh()
     }
     
     
@@ -132,8 +136,5 @@ class GameViewController : UIViewController{
         self.performSegueWithIdentifier("toBuyViewID", sender: self)
         //If we send the button then selection can be in buy view
     }
-    
-
-    
 
 }

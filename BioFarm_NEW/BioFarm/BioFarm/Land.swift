@@ -17,7 +17,6 @@ class Land {
     private var crop : Crop
     private let size : Int
 
-    
     init(size : Int) {
         self.size = size
         crop = Crop(typeGiven: CropType.Empty, insuredGiven: false)
@@ -40,10 +39,6 @@ class Land {
         crop = Crop() // Resets crop to blank
         return profit
     }
-    
-//    func getSize () -> Int {
-//        return size
-//    }
     
     func getSize() -> Double {
         return Double(size)

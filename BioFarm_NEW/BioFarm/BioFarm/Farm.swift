@@ -25,7 +25,6 @@ public class Farm {
             sum += land.harvest(modifier)
         }
         
-        
         //var profit = Double (sum) * modifier
         return sum
     }

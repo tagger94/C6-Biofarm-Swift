@@ -63,7 +63,8 @@
                         <color key="backgroundColor" red="0.13725490868091583" green="0.55686277151107788" blue="0.14901961386203766" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Main Menu" id="hlY-1f-NdL"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="1024"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qn-wf-YJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1507" y="-1297"/>
+            <point key="canvasLocation" x="-2060" y="-670"/>
         </scene>
         <!--Game-->
         <scene sceneID="fZu-qT-ad3">
@@ -276,6 +277,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 8 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4Z-IR-4kE">
+                                <rect key="frame" x="101" y="405" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAS-jo-gut">
                                 <rect key="frame" x="629" y="72" width="123" height="123"/>
                                 <state key="normal" title="Harvest" backgroundImage="NR-soil_good">
@@ -295,10 +302,10 @@
                                 <rect key="frame" x="0.0" y="72" width="299" height="66"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="R-barn" translatesAutoresizingMaskIntoConstraints="NO" id="hJn-aq-mgf">
-                                <rect key="frame" x="455" y="337" width="240" height="128"/>
+                                <rect key="frame" x="472" y="564" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farm 8 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4Z-IR-4kE">
-                                <rect key="frame" x="101" y="405" width="209" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Modifer Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1n-CJ-Csy">
+                                <rect key="frame" x="332" y="287" width="420" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -306,7 +313,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14117647707462311" green="0.49411767721176147" blue="0.14117647707462311" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="1024"/>
                     <connections>
                         <outlet property="btn_Farm1" destination="haR-dm-3uJ" id="SBX-re-yn4"/>
                         <outlet property="btn_Farm2" destination="qsR-mu-m5k" id="DPv-sF-Crf"/>
@@ -327,6 +335,7 @@
                         <outlet property="lbl_Farm8" destination="p4Z-IR-4kE" id="KXd-kb-5n0"/>
                         <outlet property="lbl_Money" destination="RDN-hT-yUj" id="b0x-xG-T0D"/>
                         <outlet property="lbl_harvestMod" destination="qmB-Zy-N14" id="0x2-jr-U0J"/>
+                        <outlet property="lbl_modiferText" destination="e1n-CJ-Csy" id="yUv-fa-9W9"/>
                         <segue destination="evP-8u-UxC" kind="popoverPresentation" identifier="toBuyViewID" popoverAnchorView="haR-dm-3uJ" id="3Df-dX-5bZ">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
@@ -334,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nir-T3-L1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2939" y="458"/>
+            <point key="canvasLocation" x="-2947" y="458"/>
         </scene>
         <!--Buy View Controller-->
         <scene sceneID="AAs-ZP-bJJ">
@@ -354,7 +363,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xgj-Xk-MG7">
-                                <rect key="frame" x="16" y="110" width="288" height="239.5"/>
+                                <rect key="frame" x="16" y="110" width="288" height="240"/>
                             </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnc-Jb-YPh">
                                 <rect key="frame" x="255" y="358" width="51" height="31"/>
@@ -423,7 +432,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4m-4n-rCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="J6n-IR-X4H" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2255" y="686"/>
+            <point key="canvasLocation" x="-2234" y="458"/>
         </scene>
         <!--Navigation 1-->
         <scene sceneID="2OH-gP-NaN">
@@ -442,7 +451,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxS-kK-dDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3657" y="-790"/>
+            <point key="canvasLocation" x="-2947" y="-1567"/>
         </scene>
     </scenes>
     <resources>
