@@ -297,7 +297,7 @@
                         <outlet property="btn_Farm6" destination="TDc-jJ-Tld" id="5aX-7g-h4K"/>
                         <outlet property="btn_Farm7" destination="aiZ-sQ-Tsh" id="d75-gX-SUl"/>
                         <outlet property="btn_Farm8" destination="WDC-FL-F5n" id="Ugz-ac-Taw"/>
-                        <outlet property="harvestButton" destination="EAS-jo-gut" id="4eb-ls-Pwe"/>
+                        <outlet property="btn_harvest" destination="EAS-jo-gut" id="qQa-wV-ZeZ"/>
                         <outlet property="lbl_Farm1" destination="eeE-sD-nMY" id="I5K-Je-yqI"/>
                         <outlet property="lbl_Farm2" destination="mNP-OO-XZF" id="Kj5-Ie-VCr"/>
                         <outlet property="lbl_Farm3" destination="aCd-iV-01J" id="21Z-11-Bdy"/>
@@ -436,10 +436,10 @@
             </objects>
             <point key="canvasLocation" x="-2300" y="1057"/>
         </scene>
-        <!--Navigation 1-->
+        <!--Navigation View Controller-->
         <scene sceneID="2OH-gP-NaN">
             <objects>
-                <navigationController title="Navigation 1" automaticallyAdjustsScrollViewInsets="NO" id="DrG-t5-Gts" sceneMemberID="viewController">
+                <navigationController title="Navigation View Controller" automaticallyAdjustsScrollViewInsets="NO" id="DrG-t5-Gts" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SKF-iB-kL2">

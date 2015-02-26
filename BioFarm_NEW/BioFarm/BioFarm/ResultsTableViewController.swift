@@ -32,9 +32,7 @@ class ResultsTableViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        println(indexPath.row)
-        
+   
         switch indexPath.row{
             case 0:
                 cell.textLabel!.text = String(format: "Year %d", year)

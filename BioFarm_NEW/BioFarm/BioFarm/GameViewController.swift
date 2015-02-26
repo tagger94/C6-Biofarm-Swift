@@ -34,7 +34,7 @@ class GameViewController : UIViewController{
     @IBOutlet var btn_Farm6: OBShapedButton!
     @IBOutlet var btn_Farm7: OBShapedButton!
     @IBOutlet var btn_Farm8: OBShapedButton!
-    @IBOutlet var harvestButton: UIButton!
+    @IBOutlet var btn_harvest: UIButton!
     
     //Sounds
     //var sound : AVAudioPlayer?
@@ -84,12 +84,33 @@ class GameViewController : UIViewController{
         
     }
     
-    func refreshImages(){
-        var image1 : UIImage = UIImage(named: "R-soil_good")!
-        btn_Farm1.setBackgroundImage(image1, forState: btn_Farm1.state)
-        btn_Farm2.setBackgroundImage(image1, forState: btn_Farm1.state)
+    func resetImages(){
+        btn_Farm1.setImage(nil, forState: btn_Farm1.state)
+        btn_Farm2.setImage(nil, forState: btn_Farm2.state)
+        btn_Farm3.setImage(nil, forState: btn_Farm3.state)
+        btn_Farm4.setImage(nil, forState: btn_Farm4.state)
+        btn_Farm5.setImage(nil, forState: btn_Farm5.state)
+        btn_Farm6.setImage(nil, forState: btn_Farm6.state)
+        btn_Farm7.setImage(nil, forState: btn_Farm7.state)
+        btn_Farm8.setImage(nil, forState: btn_Farm8.state)
     }
     
+    func refreshImages(){
+        var image1 : UIImage = UIImage(named: masterFarm.farmLand[selectedFarm]!.getCropSprite())!
+        switch selectedFarm{
+            case 1:btn_Farm1.setImage(image1, forState: btn_Farm1.state)
+            case 2:btn_Farm2.setImage(image1, forState: btn_Farm2.state)
+            case 3:btn_Farm3.setImage(image1, forState: btn_Farm3.state)
+            case 4:btn_Farm4.setImage(image1, forState: btn_Farm4.state)
+            case 5:btn_Farm5.setImage(image1, forState: btn_Farm5.state)
+            case 6:btn_Farm6.setImage(image1, forState: btn_Farm6.state)
+            case 7:btn_Farm7.setImage(image1, forState: btn_Farm7.state)
+            case 8:btn_Farm8.setImage(image1, forState: btn_Farm8.state)
+            default: return//btn_Farm1.setImage(image1, forState: btn_Farm1.state)
+        }
+
+    }
+
     //Methods for Buttons
     @IBAction func harvestYear(sender: AnyObject) {
         //Set modifier for year
@@ -113,7 +134,7 @@ class GameViewController : UIViewController{
         
         //Refresh Screen (for crops)
         refresh()
-        refreshImages()
+        resetImages()
         
        //toResultsView
         self.performSegueWithIdentifier("toResultsView", sender: self)
@@ -172,20 +193,7 @@ class GameViewController : UIViewController{
     @IBAction func unwindFromBuy(unwindSegue: UIStoryboardSegue){
         //When return from other BuyView, Refresh
         refresh()
-        
-        var image1 : UIImage = UIImage(named: masterFarm.farmLand[selectedFarm]!.getCropSprite())!
-        switch selectedFarm{
-            case 1:btn_Farm1.setImage(image1, forState: btn_Farm1.state)
-            case 2:btn_Farm2.setImage(image1, forState: btn_Farm2.state)
-            case 3:btn_Farm3.setImage(image1, forState: btn_Farm3.state)
-            case 4:btn_Farm4.setImage(image1, forState: btn_Farm4.state)
-            case 5:btn_Farm5.setImage(image1, forState: btn_Farm5.state)
-            case 6:btn_Farm6.setImage(image1, forState: btn_Farm6.state)
-            case 7:btn_Farm7.setImage(image1, forState: btn_Farm7.state)
-            case 8:btn_Farm8.setImage(image1, forState: btn_Farm8.state)
-            default: return//btn_Farm1.setImage(image1, forState: btn_Farm1.state)
-        }
-        
+        refreshImages()
     }
     
 }
