@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+//import AVFoundation
 
 class GameViewController : UIViewController{
     
@@ -25,24 +26,44 @@ class GameViewController : UIViewController{
     @IBOutlet var lbl_Farm8: UILabel!
     
     //Buttons
-    @IBOutlet var btn_Farm1 : UIButton!
-    @IBOutlet var btn_Farm2: UIButton!
-    @IBOutlet var btn_Farm3: UIButton!
-    @IBOutlet var btn_Farm4: UIButton!
-    @IBOutlet var btn_Farm5: UIButton!
-    @IBOutlet var btn_Farm6: UIButton!
-    @IBOutlet var btn_Farm7: UIButton!
-    @IBOutlet var btn_Farm8: UIButton!
+    @IBOutlet var btn_Farm1: OBShapedButton!
+    @IBOutlet var btn_Farm2: OBShapedButton!
+    @IBOutlet var btn_Farm3: OBShapedButton!
+    @IBOutlet var btn_Farm4: OBShapedButton!
+    @IBOutlet var btn_Farm5: OBShapedButton!
+    @IBOutlet var btn_Farm6: OBShapedButton!
+    @IBOutlet var btn_Farm7: OBShapedButton!
+    @IBOutlet var btn_Farm8: OBShapedButton!
     @IBOutlet var harvestButton: UIButton!
     
+    //Sounds
+    //var sound : AVAudioPlayer?
+    
     //Other Instance Variables
-    var selectFarm : String = "F1"
+    var selectedFarm : Int = 1
     var masterFarm : Farm = Farm()
+    var tempFarm : Farm = Farm()
     private var e : Event = Event()
     private var modifier: Double = 0.0
-    private var eventText: String = "Nothing Here"
-    private var yearsPassed : Int = 0;
+    private var eventText: String = ""
+    private var yearsPassed : Int = 0
+    private var profit : Double = 0.0
     
+    //System Methods
+    override func viewDidLoad(){
+        //what runs when this view is first loaded
+        super.viewDidLoad()
+        
+        //setting default outputs
+        self.refresh()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning()
+    }
+    
+    //Refresh Methods
     func refresh(){
         //Debug
         println(masterFarm.getCash())
@@ -51,90 +72,120 @@ class GameViewController : UIViewController{
         lbl_Money.text = String(format: "$%.2f", masterFarm.getCash())
         
         //Update labels for each farm
-        lbl_Farm1.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F1"), masterFarm.getCrops("F1").getCropName())
-        lbl_Farm2.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F2"), masterFarm.getCrops("F2").getCropName())
-        lbl_Farm3.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F3"), masterFarm.getCrops("F3").getCropName())
-        lbl_Farm4.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F4"), masterFarm.getCrops("F4").getCropName())
-        lbl_Farm5.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F5"), masterFarm.getCrops("F5").getCropName())
-        lbl_Farm6.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F6"), masterFarm.getCrops("F6").getCropName())
-        lbl_Farm7.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F7"), masterFarm.getCrops("F7").getCropName())
-        lbl_Farm8.text = String(format: "%.0f acres of %@", masterFarm.getLandSize("F8"), masterFarm.getCrops("F8").getCropName())
+        lbl_Farm1.text = String(format: "%.0f acres of %@", masterFarm.farmLand[1]!.getLandSize(), masterFarm.farmLand[1]!.getCropName())
+        lbl_Farm2.text = String(format: "%.0f acres of %@", masterFarm.farmLand[2]!.getLandSize(), masterFarm.farmLand[2]!.getCropName())
+        lbl_Farm3.text = String(format: "%.0f acres of %@", masterFarm.farmLand[3]!.getLandSize(), masterFarm.farmLand[3]!.getCropName())
+        lbl_Farm4.text = String(format: "%.0f acres of %@", masterFarm.farmLand[4]!.getLandSize(), masterFarm.farmLand[4]!.getCropName())
+        lbl_Farm5.text = String(format: "%.0f acres of %@", masterFarm.farmLand[5]!.getLandSize(), masterFarm.farmLand[5]!.getCropName())
+        lbl_Farm6.text = String(format: "%.0f acres of %@", masterFarm.farmLand[6]!.getLandSize(), masterFarm.farmLand[6]!.getCropName())
+        lbl_Farm7.text = String(format: "%.0f acres of %@", masterFarm.farmLand[7]!.getLandSize(), masterFarm.farmLand[7]!.getCropName())
+        lbl_Farm8.text = String(format: "%.0f acres of %@", masterFarm.farmLand[8]!.getLandSize(), masterFarm.farmLand[8]!.getCropName())
         //TODO: put this in a loop for easier future formating
         
     }
     
+    func refreshImages(){
+        var image1 : UIImage = UIImage(named: "R-soil_good")!
+        btn_Farm1.setBackgroundImage(image1, forState: btn_Farm1.state)
+        btn_Farm2.setBackgroundImage(image1, forState: btn_Farm1.state)
+    }
+    
+    //Methods for Buttons
     @IBAction func harvestYear(sender: AnyObject) {
         //Set modifier for year
         (modifier, eventText) = e.doEvent()
         
-        //Temp Variable for profit
-        var temp_profit = masterFarm.harvestAll(modifier)
+        //Temp Variable for profit and tempFarm for results view
+        tempFarm = masterFarm.copy()
+        profit = masterFarm.harvestAll(modifier)
         
         //Add profit back
-        masterFarm.addMoney(temp_profit)
+        masterFarm.addMoney(profit)
         
         //Increment Year
         yearsPassed++
         
         //Print Year Results
-        lbl_harvestMod.text = String(format: "Year: %d \nModifier: %.2f\nReturn: $%.2f", yearsPassed, modifier, temp_profit)
+        lbl_harvestMod.text = String(format: "Year: %d \nModifier: %.2f\nReturn: $%.2f", yearsPassed, modifier, profit)
         
         //print flavor Text
         lbl_modiferText.text = eventText
         
         //Refresh Screen (for crops)
         refresh()
-    }
-    
-    override func viewDidLoad(){
-        //what runs when this view is first loaded
-        super.viewDidLoad()
+        refreshImages()
         
-        //setting default outputs
-        self.refresh()
+       //toResultsView
+        self.performSegueWithIdentifier("toResultsView", sender: self)
+
+        //TEST: play applause
+//      applause.play()
     }
 
-    override func didReceiveMemoryWarning() {
-        // Dispose of any resources that can be recreated.
-        super.didReceiveMemoryWarning()
+    @IBAction func goToBuyScreen(sender: AnyObject) {
+        //Decided what farm to send to buyView
+        //Might be able to do this in Buy View by having sender forwarded to that view
+        switch sender {
+            case btn_Farm1 as UIButton: selectedFarm = 1
+            case btn_Farm2 as UIButton: selectedFarm = 2
+            case btn_Farm3 as UIButton: selectedFarm = 3
+            case btn_Farm4 as UIButton: selectedFarm = 4
+            case btn_Farm5 as UIButton: selectedFarm = 5
+            case btn_Farm6 as UIButton: selectedFarm = 6
+            case btn_Farm7 as UIButton: selectedFarm = 7
+            case btn_Farm8 as UIButton: selectedFarm = 8
+            default: selectedFarm = 1
+        }
+        
+        //DEBUG: Prints selected farm to console
+        println(selectedFarm)
+        
+        //Do the segue to buy view
+        self.performSegueWithIdentifier("toBuyView", sender: self)
+        //If we send the button then selection can be in buy view
     }
     
+    //Methods for Segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //Create Destination
-        var dest : BuyViewController = segue.destinationViewController as BuyViewController
+        segue.destinationViewController
         
-        //Forward Variables
-        dest.selectedFarm = self.selectFarm
-        dest.farm = masterFarm //Passed by Refrence? So value can be seen by both
+        //Create Destination
+        switch segue.identifier! {
+            case "toBuyView":
+                var dest : BuyViewController = segue.destinationViewController as BuyViewController
+                println("toBuyView")
+                dest.selectedFarm = self.selectedFarm
+                dest.farm = masterFarm //Passed by Refrence? So value can be seen by both
+            case "toResultsView":
+                var dest : ResultsTableViewController = segue.destinationViewController as ResultsTableViewController
+                println("toResultsView")
+                dest.farm = tempFarm //Passed by Refrence? So value can be seen by both
+                dest.year = self.yearsPassed
+                dest.profit = profit
+                dest.mod = modifier
+                dest.modText = eventText
+            default: break
+        }
+        
     }
     
     @IBAction func unwindFromBuy(unwindSegue: UIStoryboardSegue){
         //When return from other BuyView, Refresh
         refresh()
-    }
-    
-    
-    @IBAction func goToBuyScreen(sender: AnyObject) {
-        //Decided what farm to send to buyView
-        //Might be able to do this in Buy View by having sender forwarded to that view
-        switch sender {
-            case btn_Farm1 as UIButton: selectFarm = "F1"
-            case btn_Farm2 as UIButton: selectFarm = "F2"
-            case btn_Farm3 as UIButton: selectFarm = "F3"
-            case btn_Farm4 as UIButton: selectFarm = "F4"
-            case btn_Farm5 as UIButton: selectFarm = "F5"
-            case btn_Farm6 as UIButton: selectFarm = "F6"
-            case btn_Farm7 as UIButton: selectFarm = "F7"
-            case btn_Farm8 as UIButton: selectFarm = "F8"
-            default: selectFarm = "F1"
+        
+        var image1 : UIImage = UIImage(named: masterFarm.farmLand[selectedFarm]!.getCropSprite())!
+        switch selectedFarm{
+            case 1:btn_Farm1.setImage(image1, forState: btn_Farm1.state)
+            case 2:btn_Farm2.setImage(image1, forState: btn_Farm2.state)
+            case 3:btn_Farm3.setImage(image1, forState: btn_Farm3.state)
+            case 4:btn_Farm4.setImage(image1, forState: btn_Farm4.state)
+            case 5:btn_Farm5.setImage(image1, forState: btn_Farm5.state)
+            case 6:btn_Farm6.setImage(image1, forState: btn_Farm6.state)
+            case 7:btn_Farm7.setImage(image1, forState: btn_Farm7.state)
+            case 8:btn_Farm8.setImage(image1, forState: btn_Farm8.state)
+            default: return//btn_Farm1.setImage(image1, forState: btn_Farm1.state)
         }
         
-        //DEBUG: Prints selected farm to console
-        println(selectFarm)
-        
-        //Do the segue to buy view
-        self.performSegueWithIdentifier("toBuyViewID", sender: self)
-        //If we send the button then selection can be in buy view
     }
-
+    
 }

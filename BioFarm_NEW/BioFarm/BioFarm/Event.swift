@@ -15,13 +15,14 @@ class Event{
     var rand: Int = 0
     var mod = (eventModifier: 0.0, eventText: " ")
     
+    //Returns the Modifer of the Event that has been chosen
     func getModifier() ->(eventModifier: Double, eventText: String){
         return (mod.eventModifier, mod.eventText)
     }
     
+    //Randomly Chooses an Event
     func doEvent() -> (eventModifier: Double, eventText: String) {
         rand = Int(arc4random_uniform(1000)) + 1
-        println(rand)
         if(rand <= 600) {
             mod.eventModifier = 1.0
             mod.eventText = "You had a good year!"

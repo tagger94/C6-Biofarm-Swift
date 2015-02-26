@@ -10,12 +10,17 @@ import Foundation
 
 public class Farm {
     
-    var farmLand : [String:Land]
+    let farmLand : [Int:Land]
     var cash: Double
     
     init(){
-        farmLand = ["F1": Land(size: 175), "F2": Land(size: 250), "F3": Land(size: 180), "F4": Land(size: 150), "F5": Land(size: 60), "F6": Land(size: 60), "F7":Land(size: 65), "F8":Land(size: 60)]
+        farmLand = [1: Land(size: 175), 2: Land(size: 250), 3: Land(size: 180), 4: Land(size: 150), 5: Land(size: 60), 6: Land(size: 60), 7:Land(size: 65), 8:Land(size: 60)]
         cash = 1000000
+    }
+    
+    init(f : [Int:Land], c : Double){
+        farmLand = f
+        cash = c
     }
     
     func harvestAll(modifier : Double) -> Double{
@@ -29,15 +34,7 @@ public class Farm {
         return sum
     }
     
-    func plantCrops(farm : String, cropToPlant : Crop) -> Double{
-        return farmLand[farm]!.plant(cropToPlant)
-        //plant crop animation
-    }
-    
-    func getCrops(farmName : String) -> Crop {
-        return farmLand[farmName]!.getCrop()
-    }
-    
+    //Money Methods $$
     func addMoney(amount : Double){
         cash = cash + amount
     }
@@ -50,8 +47,19 @@ public class Farm {
         return cash
     }
     
-    func getLandSize(farmName : String) -> Double {
-        return farmLand[farmName]!.getSize()
+    func copy() -> Farm{
+        var temp_farm : Farm
+        var temp_fland : [Int:Land] = [1: Land(size: 175), 2: Land(size: 250), 3: Land(size: 180), 4: Land(size: 150), 5: Land(size: 60), 6: Land(size: 60), 7:Land(size: 65), 8:Land(size: 60)]
+        var i : Int = 1
+        
+        for(farm, land) in farmLand{
+            let tempLand = land.copy()
+            temp_fland[i] = tempLand
+            i++
+        }
+        
+        temp_farm = Farm(f: temp_fland, c: cash)
+        return temp_farm
     }
     
 }
