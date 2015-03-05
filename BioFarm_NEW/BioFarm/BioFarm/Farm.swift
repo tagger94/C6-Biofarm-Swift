@@ -8,37 +8,58 @@
 
 import Foundation
 
-class Farm {
+public class Farm {
     
-    var farmLand : [String:Land]
-    var cash : Money
+    let farmLand : [Int:Land]
+    var cash: Double
     
     init(){
-        farmLand = ["F1": Land(size: 100), "F2": Land(size: 200), "F3": Land(size: 300), "F4": Land(size: 400)]
-        cash = Money()
+        farmLand = [1: Land(size: 175), 2: Land(size: 250), 3: Land(size: 180), 4: Land(size: 150), 5: Land(size: 60), 6: Land(size: 60), 7:Land(size: 65), 8:Land(size: 60)]
+        cash = 1000000
     }
     
-    private func totalProfit() -> Double{
-        var sum : Int = 0
-        var e = Event()
-        
-        var modifier: Double = e.doEvent()
+    init(f : [Int:Land], c : Double){
+        farmLand = f
+        cash = c
+    }
+    
+    func harvestAll(modifier : Double) -> Double{
+        var sum : Double = 0
+
         for (farm, land) in farmLand{
-            sum += land.harvest()
+            sum += land.harvest(modifier)
         }
         
+        //var profit = Double (sum) * modifier
+        return sum
+    }
+    
+    //Money Methods $$
+    func addMoney(amount : Double){
+        cash = cash + amount
+    }
+    
+    func subMoney(amount : Double){
+        cash = cash - amount
+    }
+    
+    func getCash() -> Double{
+        return cash
+    }
+    
+    func copy() -> Farm{
+        var temp_farm : Farm
+        var temp_fland : [Int:Land] = [1: Land(size: 175), 2: Land(size: 250), 3: Land(size: 180), 4: Land(size: 150), 5: Land(size: 60), 6: Land(size: 60), 7:Land(size: 65), 8:Land(size: 60)]
+        var i : Int = 1
         
-        var profit = Double (sum) * modifier
-        return profit
-    }
-    
-    func changeMoney(amount : Double){
-        cash.add(amount)
-    }
-    
-    func plantCrops(farm : String, cropToPlant : Crop){
-        farmLand[farm]?.plant(cropToPlant)
-        //plants crop animation
+        for(farm, land) in farmLand{
+            let tempLand = land.copy()
+            temp_fland[i] = tempLand
+            i++
+        }
+        
+        temp_farm = Farm(f: temp_fland, c: cash)
+        return temp_farm
     }
     
 }

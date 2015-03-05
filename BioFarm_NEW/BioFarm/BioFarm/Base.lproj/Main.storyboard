@@ -1,76 +1,522 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="DrG-t5-Gts">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BioFarm" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
+                <viewController title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="BioFarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lad-fA-9ix">
-                                <rect key="frame" x="229" y="243" width="63" height="33"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="R-splashscreen" id="mOY-40-lDh">
+                                <rect key="frame" x="0.0" y="64" width="768" height="541"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lad-fA-9ix">
+                                <rect key="frame" x="317" y="569" width="114" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Play" backgroundImage="R-button_start">
+                                    <color key="titleColor" red="0.99215692280000001" green="0.062745101750000004" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="helloWorld:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUD-GL-aix"/>
+                                    <segue destination="0ih-xw-pyE" kind="push" identifier="toGameViewID" id="ciV-5O-vFz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="C6 BioFarm: The Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jep-mb-lGR">
-                                <rect key="frame" x="137" y="188" width="326" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CKf-se-rhE">
+                                <rect key="frame" x="317" y="651" width="114" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Options" backgroundImage="R-button_start">
+                                    <color key="titleColor" red="0.99215692280000001" green="0.062745101750000004" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xMM-AB-dDi" kind="push" id="jk7-CE-177"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C6 BioFarm: The Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jep-mb-lGR">
+                                <rect key="frame" x="221" y="509" width="326" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.99215692281723022" green="0.35294118523597717" blue="0.0078431377187371254" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="barn" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-aX-827">
-                                <rect key="frame" x="215" y="28" width="170" height="105"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="R-soybean" id="sw5-bF-Cqn">
+                                <rect key="frame" x="513" y="613" width="169" height="187"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-se-rhE">
-                                <rect key="frame" x="233" y="284" width="55" height="30"/>
-                                <state key="normal" title="Options">
-                                    <color key="titleColor" red="0.03529411927" green="0.043137256059999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="options:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SFY-S5-haI"/>
-                                </connections>
-                            </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="ue5-Lx-aDs">
-                                <rect key="frame" x="6" y="413" width="85" height="176"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDW-5k-dSP">
-                                <rect key="frame" x="193" y="322" width="134" height="82"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YDW-5k-dSP">
+                                <rect key="frame" x="317" y="471" width="134" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99215692280000001" green="0.35294118520000001" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="switchgrass" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-bF-Cqn">
-                                <rect key="frame" x="495" y="423" width="85" height="170"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="R-corn" id="ue5-Lx-aDs">
+                                <rect key="frame" x="66" y="613" width="160" height="279"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.094117656350135803" green="0.61568629741668701" blue="0.14901961386203766" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="Jep-mb-lGR" id="Mdf-le-s1V"/>
-                        <outlet property="lbl0" destination="YDW-5k-dSP" id="RKo-ye-8FP"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Main Menu" id="hlY-1f-NdL"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="1024"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1600" y="-763"/>
+        </scene>
+        <!--Options-->
+        <scene sceneID="WSK-vZ-1Ja">
+            <objects>
+                <viewController storyboardIdentifier="Options" title="Options" id="xMM-AB-dDi" customClass="OptionsViewController" customModule="BioFarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dN-rh-mYT">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="dU9-fW-iUi">
+                                <rect key="frame" x="259" y="141" width="250" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="hEs-9T-ArE">
+                                <rect key="frame" x="360" y="237" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q73-cS-cIY">
+                                <rect key="frame" x="351" y="105" width="66" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OFF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y8H-3h-IlD">
+                                <rect key="frame" x="465" y="237" width="42" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ON" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WJg-Jh-ar1">
+                                <rect key="frame" x="261" y="237" width="42" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="PXP-re-6Sx"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qn-wf-YJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="-738"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="fZu-qT-ad3">
+            <objects>
+                <viewController storyboardIdentifier="Game" title="Game" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0ih-xw-pyE" customClass="GameViewController" customModule="BioFarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FEI-h5-Eue">
+                        <rect key="frame" x="0.0" y="0.0" width="755" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="R-bar_money" id="DUg-Am-vL4">
+                                <rect key="frame" x="0.0" y="72" width="299" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RDN-hT-yUj">
+                                <rect key="frame" x="85" y="98" width="172" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="label1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94901967050000002" green="1" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm 2 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mNP-OO-XZF">
+                                <rect key="frame" x="16" y="179" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm 3 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aCd-iV-01J">
+                                <rect key="frame" x="16" y="208" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm 4 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vGT-VV-9DN">
+                                <rect key="frame" x="17" y="237" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm 5 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XfU-tL-OJc">
+                                <rect key="frame" x="249" y="151" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm 6 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NmV-Oj-Yxt">
+                                <rect key="frame" x="249" y="178" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm 7 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dhn-Zw-57o">
+                                <rect key="frame" x="249" y="208" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm 8 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p4Z-IR-4kE">
+                                <rect key="frame" x="249" y="236" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year Info" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qmB-Zy-N14">
+                                <rect key="frame" x="450" y="77" width="171" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EAS-jo-gut">
+                                <rect key="frame" x="634" y="77" width="123" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Harvest" backgroundImage="NR-soil_good">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="harvestYear:" destination="0ih-xw-pyE" eventType="touchUpInside" id="6uh-8k-GR4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifer Text" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e1n-CJ-Csy">
+                                <rect key="frame" x="548" y="253" width="220" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm 1 Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eeE-sD-nMY">
+                                <rect key="frame" x="16" y="150" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" id="96L-oL-WID">
+                                <rect key="frame" x="31" y="470" width="693" height="523"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="R-map_river" id="j8T-kR-hs9">
+                                        <rect key="frame" x="266" y="0.0" width="431" height="523"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WDC-FL-F5n" customClass="OBShapedButton">
+                                        <rect key="frame" x="226" y="0.0" width="446" height="523"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="R-map8">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="LWi-bq-DJq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aiZ-sQ-Tsh">
+                                        <rect key="frame" x="321" y="0.0" width="372" height="473"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="R-map7">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="gVF-Ll-wAH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EQh-Zv-LJr" customClass="OBShapedButton">
+                                        <rect key="frame" x="466" y="193" width="227" height="257"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="R-map6">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="efD-iX-Nj2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qsR-mu-m5k" customClass="OBShapedButton">
+                                        <rect key="frame" x="0.0" y="301" width="339" height="222"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="R-map2"/>
+                                        <connections>
+                                            <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="Wgd-fj-SFa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XKQ-yR-brl" customClass="OBShapedButton">
+                                        <rect key="frame" x="466" y="0.0" width="227" height="193"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                        </accessibility>
+                                        <state key="normal" backgroundImage="R-map4">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="TX2-cF-HUa"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" id="haR-dm-3uJ" customClass="OBShapedButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="317" height="301"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" backgroundImage="R-map1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="CTa-YH-Thj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O4n-R8-IKn" customClass="OBShapedButton">
+                                        <rect key="frame" x="339" y="317" width="250" height="206"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="R-map3">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="bac-GM-bvE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wXg-ai-Zzp" customClass="OBShapedButton">
+                                        <rect key="frame" x="364" y="0.0" width="104" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="R-map5">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToBuyScreen:" destination="0ih-xw-pyE" eventType="touchUpInside" id="6XZ-mL-Z40"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1411764771" green="0.49411767719999999" blue="0.1411764771" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pPN-D7-KSL"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="755" height="1024"/>
+                    <connections>
+                        <outlet property="btn_Farm1" destination="haR-dm-3uJ" id="SBX-re-yn4"/>
+                        <outlet property="btn_Farm2" destination="qsR-mu-m5k" id="DPv-sF-Crf"/>
+                        <outlet property="btn_Farm3" destination="O4n-R8-IKn" id="qjO-Th-6YC"/>
+                        <outlet property="btn_Farm4" destination="XKQ-yR-brl" id="oFp-bX-J8a"/>
+                        <outlet property="btn_Farm5" destination="wXg-ai-Zzp" id="1X9-eI-fRS"/>
+                        <outlet property="btn_Farm6" destination="EQh-Zv-LJr" id="bmo-d5-eSB"/>
+                        <outlet property="btn_Farm7" destination="aiZ-sQ-Tsh" id="d75-gX-SUl"/>
+                        <outlet property="btn_Farm8" destination="WDC-FL-F5n" id="Ugz-ac-Taw"/>
+                        <outlet property="btn_harvest" destination="EAS-jo-gut" id="qQa-wV-ZeZ"/>
+                        <outlet property="lbl_Farm1" destination="eeE-sD-nMY" id="I5K-Je-yqI"/>
+                        <outlet property="lbl_Farm2" destination="mNP-OO-XZF" id="Kj5-Ie-VCr"/>
+                        <outlet property="lbl_Farm3" destination="aCd-iV-01J" id="21Z-11-Bdy"/>
+                        <outlet property="lbl_Farm4" destination="vGT-VV-9DN" id="MdH-Cv-183"/>
+                        <outlet property="lbl_Farm5" destination="XfU-tL-OJc" id="bah-Vd-bSC"/>
+                        <outlet property="lbl_Farm6" destination="NmV-Oj-Yxt" id="KHz-aD-lT7"/>
+                        <outlet property="lbl_Farm7" destination="dhn-Zw-57o" id="86g-FG-g6V"/>
+                        <outlet property="lbl_Farm8" destination="p4Z-IR-4kE" id="KXd-kb-5n0"/>
+                        <outlet property="lbl_Money" destination="RDN-hT-yUj" id="b0x-xG-T0D"/>
+                        <outlet property="lbl_harvestMod" destination="qmB-Zy-N14" id="0x2-jr-U0J"/>
+                        <outlet property="lbl_modiferText" destination="e1n-CJ-Csy" id="yUv-fa-9W9"/>
+                        <segue destination="evP-8u-UxC" kind="popover" identifier="toBuyView" popoverAnchorView="RDN-hT-yUj" id="3Df-dX-5bZ">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                        <segue destination="zFX-oZ-jnJ" kind="popover" identifier="toResultsView" popoverAnchorView="EAS-jo-gut" id="P8n-1F-FQK">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nir-T3-L1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1600.5" y="440"/>
+        </scene>
+        <!--Results Table View Controller-->
+        <scene sceneID="xce-Ar-aYc">
+            <objects>
+                <tableViewController id="zFX-oZ-jnJ" customClass="ResultsTableViewController" customModule="BioFarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zDh-uG-Y45">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="44" id="2qP-pO-5Dg">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2qP-pO-5Dg" id="K38-aP-XSL">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zFX-oZ-jnJ" id="ETI-ty-KPA"/>
+                            <outlet property="delegate" destination="zFX-oZ-jnJ" id="zhj-lS-2d2"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lbm-eh-rcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-829" y="296"/>
+        </scene>
+        <!--Buy View Controller-->
+        <scene sceneID="AAs-ZP-bJJ">
+            <objects>
+                <viewController storyboardIdentifier="BuyView" autoresizesArchivedViewToFullSize="NO" definesPresentationContext="YES" id="evP-8u-UxC" customClass="BuyViewController" customModule="BioFarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fkz-en-ffF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZxS-4S-hjl">
+                                <rect key="frame" x="104" y="0.0" width="112" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Xgj-Xk-MG7">
+                                <rect key="frame" x="16" y="110" width="288" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="rnc-Jb-YPh">
+                                <rect key="frame" x="255" y="358" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeInsur:" destination="evP-8u-UxC" eventType="valueChanged" id="eWZ-ms-kSc"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insured" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oX3-Uq-Q4s">
+                                <rect key="frame" x="16" y="358" width="191" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculation" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Vv-oA-wDk">
+                                <rect key="frame" x="16" y="397" width="266" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uEx-eh-net">
+                                <rect key="frame" x="27" y="505" width="169" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="VlS-es-wfA">
+                                <rect key="frame" x="16" y="36" width="288" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9490196704864502" green="1" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <segments>
+                                    <segment title="Corn"/>
+                                    <segment title="Soybeans"/>
+                                    <segment title="Switchgrass"/>
+                                </segments>
+                                <color key="tintColor" red="0.035294119268655777" green="0.074509806931018829" blue="0.070588238537311554" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="cropUpdate:" destination="evP-8u-UxC" eventType="valueChanged" id="Hn3-BZ-hxg"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EDn-32-GuY" customClass="OBShapedButton">
+                                <rect key="frame" x="204" y="505" width="100" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Buy" backgroundImage="R-button_buy">
+                                    <color key="titleColor" red="0.94901967050000002" green="1" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buy" destination="evP-8u-UxC" eventType="touchUpInside" id="wQ1-VX-WUH"/>
+                                    <segue destination="J6n-IR-X4H" kind="unwind" identifier="go" unwindAction="unwindFromBuy:" id="apb-V2-Gs4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647707462311" green="0.49411767721176147" blue="0.14117647707462311" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="400" height="600"/>
+                    <connections>
+                        <outlet property="btn_Buy" destination="EDn-32-GuY" id="XHh-Rc-8pp"/>
+                        <outlet property="img_Crop" destination="Xgj-Xk-MG7" id="c0W-jN-OZV"/>
+                        <outlet property="lbl_Calculation" destination="7Vv-oA-wDk" id="4xf-d3-LZd"/>
+                        <outlet property="lbl_Insur" destination="oX3-Uq-Q4s" id="YSm-ku-O7V"/>
+                        <outlet property="lbl_Price" destination="uEx-eh-net" id="25k-w1-7dX"/>
+                        <outlet property="seg_CropChoice" destination="VlS-es-wfA" id="8wJ-fM-yBt"/>
+                        <outlet property="swt_Insur" destination="rnc-Jb-YPh" id="aYW-45-NvD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4m-4n-rCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="J6n-IR-X4H" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-829" y="1005"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="2OH-gP-NaN">
+            <objects>
+                <navigationController title="Navigation View Controller" automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenVerticallyCompact="YES" id="DrG-t5-Gts" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SKF-iB-kL2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FAU-pH-c3d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GxS-kK-dDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1601" y="-1700"/>
         </scene>
     </scenes>
     <resources>
-        <image name="barn" width="170" height="105"/>
-        <image name="switchgrass" width="85" height="170"/>
+        <image name="NR-soil_good" width="128" height="128"/>
+        <image name="R-bar_money" width="512" height="128"/>
+        <image name="R-button_buy" width="512" height="256"/>
+        <image name="R-button_start" width="512" height="256"/>
+        <image name="R-corn" width="256" height="512"/>
+        <image name="R-map1" width="963" height="888"/>
+        <image name="R-map2" width="1023" height="648"/>
+        <image name="R-map3" width="736" height="603"/>
+        <image name="R-map4" width="683" height="546"/>
+        <image name="R-map5" width="234" height="713"/>
+        <image name="R-map6" width="683" height="777"/>
+        <image name="R-map7" width="1097" height="1393"/>
+        <image name="R-map8" width="1315" height="1536"/>
+        <image name="R-map_river" width="1242" height="1536"/>
+        <image name="R-soybean" width="256" height="256"/>
+        <image name="R-splashscreen" width="2048" height="1536"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
