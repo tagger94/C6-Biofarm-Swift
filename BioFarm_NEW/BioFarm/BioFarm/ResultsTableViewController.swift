@@ -36,18 +36,25 @@ class ResultsTableViewController: UITableViewController{
         switch indexPath.row{
             case 0:
                 cell.textLabel!.text = String(format: "Year %d", year)
+                cell.backgroundColor = UIColor.redColor()
             case 1:
                 cell.textLabel!.text = modText
+                cell.backgroundColor = UIColor.lightGrayColor()
             case 2:
                 cell.textLabel!.text = String(format: "Yearly Modifier: %.1f", mod)
+                cell.backgroundColor = UIColor.lightGrayColor()
             case 3:
                 cell.textLabel!.text = "Farms:"
+                cell.backgroundColor = UIColor.blueColor()
             case 4...11:
-                cell.textLabel!.text = String(format:"      %@",farm!.farmLand[indexPath.row - 3]!.getCropName())
+                cell.textLabel!.text = String(format:"You planted %@ on farm %d",farm!.farmLand[indexPath.row - 3]!.getCropName(), indexPath.row - 3)
+                cell.backgroundColor = UIColor.grayColor()
             case 12:
                 cell.textLabel!.text = String(format: "Profit: $%.2f ", profit)
+                cell.backgroundColor = UIColor.orangeColor()
             case 13:
                 cell.textLabel!.text = String(format: "Total Money: $%.2f", farm!.cash)
+                cell.backgroundColor = UIColor.orangeColor()
             default:
                 cell.textLabel!.text = "Error"
         }

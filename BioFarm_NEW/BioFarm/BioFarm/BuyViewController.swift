@@ -26,7 +26,7 @@ class BuyViewController: UIViewController {
     @IBOutlet var img_Crop: UIImageView!
     
     // Buttons
-    @IBOutlet var btn_Buy: UIButton!
+    @IBOutlet var btn_Buy: OBShapedButton!
     
     // Internal Variables
     var isInsured : Bool = true

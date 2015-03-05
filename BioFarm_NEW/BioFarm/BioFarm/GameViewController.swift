@@ -42,7 +42,7 @@ class GameViewController : UIViewController{
     //Other Instance Variables
     var selectedFarm : Int = 1
     var masterFarm : Farm = Farm()
-    var tempFarm : Farm = Farm()
+    private var tempFarm : Farm = Farm()
     private var e : Event = Event()
     private var modifier: Double = 0.0
     private var eventText: String = ""
@@ -56,11 +56,24 @@ class GameViewController : UIViewController{
         
         //setting default outputs
         self.refresh()
+        
+        setButtonAspect()
     }
     
     override func didReceiveMemoryWarning() {
         // Dispose of any resources that can be recreated.
         super.didReceiveMemoryWarning()
+    }
+    
+    func setButtonAspect() {
+        btn_Farm1.imageView?.contentMode = .ScaleAspectFit
+        btn_Farm2.imageView?.contentMode = .ScaleAspectFit
+        btn_Farm3.imageView?.contentMode = .ScaleAspectFit
+        btn_Farm4.imageView?.contentMode = .ScaleAspectFit
+        btn_Farm5.imageView?.contentMode = .ScaleAspectFit
+        btn_Farm6.imageView?.contentMode = .ScaleAspectFit
+        btn_Farm7.imageView?.contentMode = .ScaleAspectFit
+        btn_Farm8.imageView?.contentMode = .ScaleAspectFit
     }
     
     //Refresh Methods
@@ -108,7 +121,9 @@ class GameViewController : UIViewController{
             case 8:btn_Farm8.setImage(image1, forState: btn_Farm8.state)
             default: return//btn_Farm1.setImage(image1, forState: btn_Farm1.state)
         }
-
+        
+        //self.btn_Farm3.contentHorizontalAlignment = UIControlContentHorizontalAlignment()
+        
     }
 
     //Methods for Buttons
